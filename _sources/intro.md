@@ -44,4 +44,6 @@ Schema a blocchi di com'è composto un sensore intelligente
 
 Le reti di sensori sono molto particolari per i seguenti motivi:
 1. I nodi sensori sono limitati in termini di batteria (energia), capacità computazionale e memoria. Il parametro più 
-sensibile  
+sensibile è proprio la durata della batteria. Data la natura wireless delle comunicazioni bisogna fare un bilancio di 
+tratta e ricordarsi che la *path loss* è il fattore predominante nel dispendio necessario per trasmettere da A a B. 
+$$ FSPL(dB) = -10 log_10(P_R / P_T) = 20 * log_10(d) + 20 * log_10(f) + 20 * log_10(\frac{4π}{c}) - G_T - G_R $$

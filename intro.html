@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="About Python" href="1stchap/about_net.html" />
@@ -262,7 +264,9 @@ che metterà in comunicazione il data center di elaborazione dati e l’utente f
 <p>Le reti di sensori sono molto particolari per i seguenti motivi:</p>
 <ol class="simple">
 <li><p>I nodi sensori sono limitati in termini di batteria (energia), capacità computazionale e memoria. Il parametro più
-sensibile</p></li>
+sensibile è proprio la durata della batteria. Data la natura wireless delle comunicazioni bisogna fare un bilancio di
+tratta e ricordarsi che la <em>path loss</em> è il fattore predominante nel dispendio necessario per trasmettere da A a B.
+$<span class="math notranslate nohighlight">\( FSPL(dB) = -10 log_10(P_R / P_T) = 20 * log_10(d) + 20 * log_10(f) + 20 * log_10(\frac{4π}{c}) - G_T - G_R \)</span>$</p></li>
 </ol>
 <div class="toctree-wrapper compound">
 </div>
