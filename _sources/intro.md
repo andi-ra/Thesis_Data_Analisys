@@ -1,5 +1,12 @@
 # Strategie di network forming con tecniche SDN per reti di sensori per applicazioni di mobile IoT
 
+Le reti di sensori wireless, comunemente chiamate WSN Wireless Sensor Networks, vengono usate per molte applicazioni a
+lungo termine, come ad esempio:
+* Applicazioni militari
+* Città intelligenti e serivzi alla popolazione
+* Industria 4.0 e smart factories
+
+
 In questo documento mi accingo a mostrare le strategie di network forming. Analizzare la risposta alle domande: 
 * perché le reti di sensori hanno certe topologie particolari?
 * Cosa comporta la creazione di una rete di sensori?
@@ -12,11 +19,11 @@ Questo documento è stato sritto con Jupyter Books [the Jupyter Book documentati
 Ecco l'indice dei contenuti:
 
 ```{tableofcontents}
-- Introduzione e motivazioni
-- Stato dell'arte SDN e datastore
-- Stato dell'arte algoritmi ottimizzazione
-- Controller Ryu e NetApp
-- Algoritmi di ottimizzazione
-- Simulazione e risultati
-- Conclusione
+* Introduzione e motivazioni
+* Stato dell'arte SDN e datastore
+* Stato dell'arte algoritmi ottimizzazione
+* Controller Ryu e NetApp
+* Algoritmi di ottimizzazione
+* Simulazione e risultati
+* Conclusione
 ```
