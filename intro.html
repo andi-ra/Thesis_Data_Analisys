@@ -265,8 +265,24 @@ che metterà in comunicazione il data center di elaborazione dati e l’utente f
 <ol class="simple">
 <li><p>I nodi sensori sono limitati in termini di batteria (energia), capacità computazionale e memoria. Il parametro più
 sensibile è proprio la durata della batteria. Data la natura wireless delle comunicazioni bisogna fare un bilancio di
-tratta e ricordarsi che la <em>path loss</em> è il fattore predominante nel dispendio necessario per trasmettere da A a B.
-$<span class="math notranslate nohighlight">\( FSPL(dB) = -10 log_10(P_R / P_T) = 20 * log_10(d) + 20 * log_10(f) + 20 * log_10(\frac{4π}{c}) - G_T - G_R \)</span>$</p></li>
+tratta e ricordarsi che la <em>path loss</em> è il fattore predominante nel dispendio necessario per trasmettere da A a B.<br>
+<span class="math notranslate nohighlight">\( FSPL = P_T G_T G_R (\frac{λ}{4πd})^2 \)</span> <br> dunque vediamo come la riduzione della potenza al ricevitore segue una legge
+quadratica <span class="math notranslate nohighlight">\( d^{-2} \)</span>. Questo è un problema che induce a progettare bene gli algoritmi di routing, in quanto una trasmissione
+completamente 1-hop è impensabile, servono algoritmi di routing multi-hop con le loro peculiarità.</p></li>
+<li><p>Dato il costo ridotto dei dispositivi sensori è possibile installare un gran numero di dispositivi. Avere un gran numero
+di dispositivi significa coprire meglio il territorio ed essere più capillari (e di conseguenza efficaci) nel monitoraggio.
+D’altro canto non tutti i dispositivi verrebbero usati, avrei una certa percentuale inutilizzata e questo riduce l’efficienza
+della rete. Come in molti altri casi la questione sta nel trovare un equilibrio accettabile.</p></li>
+</ol>
+<div class="margin sidebar">
+<p class="sidebar-title">Grado di connessione</p>
+<p>È la distribuzione di porbabilità del numero di collegamenti logici che un dispositivo ha con i suoi vicini</p>
+</div>
+<ol class="simple">
+<li><p>Dopo il rollout, i nodi si organizzano in una rete e cooperano per portare a termine un compito. In generale non c’è
+un nodo coordinatore centrale che orchestra tutto quanto. Inoltre data la natura della rete dopo verrà dimostato come il
+fallimento o guasto casuale nelle reti di sensori che soddisfano un criterio di normalità sulla distribuzione dei gradi
+di connessione, non vengono influenzati in modo rilevante dai guasti random.</p></li>
 </ol>
 <div class="toctree-wrapper compound">
 </div>
