@@ -19,7 +19,7 @@ Struttura a grafo aciclico in cui ogni nodo è un cluster di nodi rappresentati 
 ```
 
 :::{figure-md} markdown-fig
-<img src="images/WSN_topo.jpg" alt="fishy" class="bg-primary mb-1" width="700px">
+<img src="../images/WSN_topo.jpg" alt="fishy" class="bg-primary mb-1" width="700px">
 
 Scenario tipo organizzato come **cluster-tree**!
 :::
