@@ -23,5 +23,6 @@ che metterà in comunicazione il data center di elaborazione dati e l'utente fin
 ```{margin} Scenario tipo
 Topologia organizzata a livello logico come cluster-tree
 ```
-![topology WSN](images\WSN_topo.jpg)
+
+<img alt="topology WSN" height="750" src="images\WSN_topo.jpg" width="750"/>
 
