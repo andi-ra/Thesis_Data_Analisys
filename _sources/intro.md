@@ -26,7 +26,7 @@ Topologia organizzata a livello logico come cluster-tree
 ![topology WSN](images\WSN_topo.jpg)
 
 :::{figure-md} markdown-fig
-<img src="images\WSN_topo.jpg" alt="fishy" class="bg-primary mb-1" width="200px">
+<img src="images/WSN_topo.jpg" alt="fishy" class="bg-primary mb-1" width="200px">
 
 This is a caption in **Markdown**!
 :::
