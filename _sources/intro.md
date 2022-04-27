@@ -18,7 +18,7 @@ Questo documento è stato sritto con Jupyter Books [the Jupyter Book documentati
 
 Ecco l'indice dei contenuti:
 
-```{tableofcontents}
+```{contents}
 * Introduzione e motivazioni
 * Stato dell'arte SDN e datastore
 * Stato dell'arte algoritmi ottimizzazione
