@@ -9,7 +9,7 @@ In questo documento mi accingo a mostrare le strategie di network forming. Anali
 
 Questo documento è stato sritto con Jupyter Books [the Jupyter Book documentation](https://jupyterbook.org) seguire il link per maggiori info.
 
-Ecco l'indice dei contnuti:
+Ecco l'indice dei contenuti:
 
 ```{tableofcontents}
 - Introduzione e motivazioni
