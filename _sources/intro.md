@@ -20,13 +20,12 @@ attraverso un protocollo di routing.
 Un'ipotesi che spesso viene fatta è che i nodi consumatori siano più potenti dei nodi campionatori. In figura vediamo 
 uno scenario tipo di rete di sensori. È da osservare la presenza della nuvoletta che rappresenta la Wide Area Network
 che metterà in comunicazione il data center di elaborazione dati e l'utente finale.
-```{margin} Scenario tipo
-Topologia organizzata a livello logico come cluster-tree
+```{margin} Clustertree
+Struttura a grafo aciclico in cui ogni nodo è un cluster di nodi rappresentati da un super nodo detto clusterhead
 ```
-![topology WSN](images\WSN_topo.jpg)
 
 :::{figure-md} markdown-fig
-<img src="images/WSN_topo.jpg" alt="fishy" class="bg-primary mb-1" width="200px">
+<img src="images/WSN_topo.jpg" alt="fishy" class="bg-primary mb-1" width="700px">
 
-This is a caption in **Markdown**!
+Scenario tipo organizzato come **xluster-tree**!
 :::
