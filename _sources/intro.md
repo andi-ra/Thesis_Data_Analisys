@@ -3,7 +3,7 @@
 Le reti di sensori wireless, comunemente chiamate WSN Wireless Sensor Networks, vengono usate per molte applicazioni a
 lungo termine, come ad esempio:
 * Applicazioni militari
-* Città intelligenti e serivzi alla popolazione
+* Città intelligenti e servizi alla popolazione
 * Industria 4.0 e smart factories
 
 Una rete di sensori solitamente consiste in device:
@@ -20,8 +20,8 @@ attraverso un protocollo di routing.
 Un'ipotesi che spesso viene fatta è che i nodi consumatori siano più potenti dei nodi campionatori. In figura vediamo 
 uno scenario tipo di rete di sensori. È da osservare la presenza della nuvoletta che rappresenta la Wide Area Network
 che metterà in comunicazione il data center di elaborazione dati e l'utente finale.
-```{margin} An optional title
-Topologia tipo organizzata come cluster-tree
+```{margin} Scenario tipo
+Topologia organizzata a livello logico come cluster-tree
 ```
-![topology WSN](C:\Users\DULLA\PycharmProjects\Thesis_Data_Analisys\tesi-andi\images\WSN_topo.jpg)
+![topology WSN](images\WSN_topo.jpg)
 
