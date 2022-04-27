@@ -228,16 +228,25 @@ lungo termine, come ad esempio:</p>
 <li><p>Città intelligenti e serivzi alla popolazione</p></li>
 <li><p>Industria 4.0 e smart factories</p></li>
 </ul>
-<p>In questo documento mi accingo a mostrare le strategie di network forming. Analizzare la risposta alle domande:</p>
+<p>Una rete di sensori solitamente consiste in device:</p>
 <ul class="simple">
-<li><p>perché le reti di sensori hanno certe topologie particolari?</p></li>
-<li><p>Cosa comporta la creazione di una rete di sensori?</p></li>
-<li><p>È sufficiente soltanto creare la rete di sensori e questa funzionerà correttamente per tutto il suo ciclo di vita?</p></li>
-<li><p>Cosa sappiamo del controllo delle reti?</p></li>
-<li><p>È necessario formare la rete in un certo modo? Possiamo controllare questo processo?</p></li>
+<li><p>sorgenti, i sensori che campionano l’ambiente e producono informazioni utili</p></li>
+<li><p>terminazioni, le base station o i clusterhead</p></li>
+<li><p>usati dagli utenti finali</p></li>
 </ul>
-<p>Questo documento è stato sritto con Jupyter Books <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> seguire il link per maggiori info.</p>
-<p>Ecco l’indice dei contenuti:</p>
+<p>I nodi sensori vengono installati in zone geografiche d’interesse, dove grazie alle loro caratteristiche di costo
+ridotto, auto-organizzazione e intercambiabilità permettono di avere un piano di raccolta dati fungibile e capillare.
+Per poter raggiungere l’obiettivo di avere una rete auto-organizzante per monitorare ambienti ho bisogno di campionare
+il fenomeno d’interesse, codificarlo e trasmettere questa rappresentazione verso un nodo consumatore dell’informazione
+attraverso un protocollo di routing.</p>
+<p>Un’ipotesi che spesso viene fatta è che i nodi consumatori siano più potenti dei nodi campionatori. In figura vediamo
+uno scenario tipo di rete di sensori. È da osservare la presenza della nuvoletta che rappresenta la Wide Area Network
+che metterà in comunicazione il data center di elaborazione dati e l’utente finale.</p>
+<div class="margin sidebar">
+<p class="sidebar-title">An optional title</p>
+<p>Topologia tipo organizzata come cluster-tree</p>
+</div>
+<p><img alt="topology WSN" src="C:%5CUsers%5CDULLA%5CPycharmProjects%5CThesis_Data_Analisys%5Ctesi-andi%5Cimages%5CWSN_topo.jpg" /></p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
