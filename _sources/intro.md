@@ -1,8 +1,11 @@
-# Strategie di network forming con tecniche SDN per reti di sensori per applicazioni di mobile IoT
+# SDN forming per mobile IoT
 
 Le reti di sensori wireless, comunemente chiamate WSN Wireless Sensor Networks, vengono usate per molte applicazioni a
 lungo termine, come ad esempio:
 * Applicazioni militari
 * Città intelligenti e servizi alla popolazione
 * Industria 4.0 e smart factories
+* veicoli intelligenti
+
+
 
