@@ -20,8 +20,11 @@ Ecco l'indice dei contnuti:
 - Stato dell'arte algoritmi ottimizzazione
 
 - Controller Ryu e NetApp
+
 - Algoritmi di ottimizzazione
+
 - Simulazione e risultati
+
 - Conclusione
 
 ```
