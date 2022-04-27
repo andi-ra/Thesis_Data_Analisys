@@ -27,5 +27,21 @@ Struttura a grafo aciclico in cui ogni nodo è un cluster di nodi rappresentati 
 :::{figure-md} markdown-fig
 <img src="images/WSN_topo.jpg" alt="fishy" class="bg-primary mb-1" width="700px">
 
-Scenario tipo organizzato come **xluster-tree**!
+Scenario tipo organizzato come **cluster-tree**!
 :::
+
+Com'è composto il singolo device sensore? A grandi linee possiamo pensarlo come composto dai seguenti blocchi in figura:
+
+```{margin} Precisazione sullo schema a blocchi
+I blocchi tratteggiati sono opzionali 
+```
+
+:::{figure-md} markdown-fig
+<img src="https://i.imgur.com/eSAKY8c.png" alt="mcu" class="bg-primary mb-1" width="700px">
+
+Schema a blocchi di com'è composto un sensore intelligente
+:::
+
+Le reti di sensori sono molto particolari per i seguenti motivi:
+1. I nodi sensori sono limitati in termini di batteria (energia), capacità computazionale e memoria. Il parametro più 
+sensibile  
