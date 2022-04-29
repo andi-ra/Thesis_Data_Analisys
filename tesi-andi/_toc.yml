@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Introduzione e motivazioni
+  chapters:
+  - file: chapters/sensor
+
+- caption: SDN e Controller
+  chapters:
+  - file: chapters/sdn
+
+- caption: Algoritmi di ottimizzazione
+  chapters:
+  - file: chapters/optmization
