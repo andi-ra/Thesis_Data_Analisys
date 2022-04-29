@@ -65,3 +65,11 @@ a catena chiusa.
 
 Immagine **temporanea**
 :::
+
+Una euristica molto efficace nel tentare di mantenere bassa la latenza di percorrenza del sistema all'aumentare del traffico
+è la seguente:
+    > All'aumentare dell'intensità media del carico offerto valuto la latenza media del sistema, quando qusta diventa 
+    > eccessiva inizio a scartare dei pacchetti
+
+Questo ha come effetto il comportamento secondo cui tanto più l'algoritmo riesce a tenere bassa la latenza e tanto più 
+potrà ammettere traffico ed aumentare così il throughput che la rete offre.
