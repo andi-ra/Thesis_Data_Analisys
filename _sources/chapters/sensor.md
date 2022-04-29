@@ -19,9 +19,9 @@ Struttura a grafo aciclico in cui ogni nodo è un cluster di nodi rappresentati 
 ```
 
 :::{figure-md} markdown-fig
-<img src="../images/WSN_topo.jpg" alt="fishy" class="bg-primary mb-1" width="700px">
+<img src="https://www.researchgate.net/profile/F-Cuomo/publication/4336210/figure/fig7/AS:668334320271360@1536354727177/A-generic-structure-of-WPAN-organized-in-a-cluster-tree-topology-the-level-of-each-node.png" alt="fishy" class="bg-primary mb-1" width="700px">
 
-Scenario tipo organizzato come **cluster-tree**!
+Scenario tipo organizzato come **cluster-tree** con reduced function device e full function devices
 :::
 
 Com'è composto il singolo device sensore? A grandi linee possiamo pensarlo come composto dai seguenti blocchi in figura:

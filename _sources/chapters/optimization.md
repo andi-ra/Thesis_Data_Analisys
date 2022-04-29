@@ -59,3 +59,9 @@ Vi sono due metriche principali sulla performance di una rete che sono influenza
 
 Il routing interagisce con il controllo di flusso per determinare queste metriche di performance attraverso un controllo
 a catena chiusa.
+
+:::{figure-md} markdown-fig
+<img src="https://miro.medium.com/max/1400/1*q_J7uLY97EyiFdYXOXuG0g.png" alt="mcu" class="bg-primary mb-1" width="700px">
+
+Immagine **temporanea**
+:::

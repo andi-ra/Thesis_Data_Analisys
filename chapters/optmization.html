@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algoritmi di ottimizzazione &#8212; Tesi Andi Dulla</title>
+    <title>Ingegnerizzazione del traffico &#8212; My sample book</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="sdn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -82,7 +81,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Tesi Andi Dulla</h1>
+      <h1 class="site-logo" id="site-title">My sample book</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -97,31 +96,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introduzione e motivazioni
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="sensor.html">
-   Reti di sensori
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Algoritmi di ottimizzazione
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Algoritmi di ottimizzazione
-  </a>
- </li>
-</ul>
-
     </div>
 </nav> <!-- To handle the deprecated key -->
 
@@ -159,10 +133,7 @@ const thebe_selector_output = ".output, .cell_output"
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/chapters/optmization.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/chapters/optmization.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
@@ -180,11 +151,11 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://andi-ra.github.io/Thesis_Data_Analisys/"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://andi-ra.github.io/Thesis_Data_Analisys//issues/new?title=Issue%20on%20page%20%2Fchapters/optmization.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/optmization.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -205,19 +176,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduzione">
-   Introduzione
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -225,37 +183,59 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Algoritmi di ottimizzazione</h1>
+                <h1>Ingegnerizzazione del traffico</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduzione">
-   Introduzione
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="algoritmi-di-ottimizzazione">
-<h1>Algoritmi di ottimizzazione<a class="headerlink" href="#algoritmi-di-ottimizzazione" title="Permalink to this headline">¶</a></h1>
-<p>In questo capitolo vado a mostrare gli aspetti di modellazione del sistema, enunciare il problema e gli algoritmi proposti.</p>
-<div class="section" id="introduzione">
-<h2>Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
-<p>Introdurrò adesso</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="ingegnerizzazione-del-traffico">
+<h1>Ingegnerizzazione del traffico<a class="headerlink" href="#ingegnerizzazione-del-traffico" title="Permalink to this headline">¶</a></h1>
+<p>In questo capitolo vado a mostrare gli aspetti di modellazione del sistema, enunciare il problema e gli algoritmi
+proposti.</p>
+<p>Introduzione Il routing in una rete è un’operazione complessa che coinvolge molti attori e protcolli che permettono
+l’organizzazione fra tutti questi componenti indipendenti fra di loro. Le ragioni della complessità sono molteplici:</p>
+<p>Il routing richiede un grado di coordinazione fra i vai nodi nella rete o nel segmento di rete considerato piuttosto che
+solo fra due nodi. Ad esempio pensiamo i protocolli di livello 2 e livello 4.</p>
+<p>L’architettura di routing deve risolvere tutti quei casi di guasti e malfunzionamenti dei collegamenti o dei nodi,
+redirezionare il traffico ed aggiornare i database informativi di ogni device.</p>
+<p>Per ottenere delle performance buone, l’algoritmo di routing può essere costretto a modificare le sue rotte
+precedentemente calcolate quando parti o segmenti di rete diventano congestionati.</p>
+<p>Difficoltà e obiettivi nel routing Le due funzioni principali di un algoritmo di routing sono:</p>
+<div class="margin sidebar">
+<p class="sidebar-title">Routing table</p>
+<p>È la struttura dati che un dispositivo ha al suo interno in cui troviamo una lista di destinatari, la distanza e come
+raggiungere quel preciso destinatario ed in più altre informazioni a seconda del protocollo finale che la userà</p>
 </div>
+<p>È la struttura dati che un dispositivo ha al suo interno in cui troviamo una lista di destinatari, la distanza e come
+raggiungere quel preciso destinatario ed in più altre informazioni a seconda del protocollo finale che la userà</p>
+<p>la selezione delle rotte fra le varie coppie origine destinazione</p>
+<p>la consegna dei messaggi alla corretta destinazione una volta scelta la rotta</p>
+<p>La seconda funzione può sembrare banale una volta usate le routing table. Ciò non è sempre vero, in quanto questo
+concetto è molto semplice nel caso che io possa fare affidamento sull’infrastruttura di rete. Nel caso in cui questo non
+sia vero e quindi io ho a che fare con una infrastruttura non affidabile, diventa fondamentale il modo in cui scelgo il
+next-hop.</p>
+<div class="margin sidebar">
+<p class="sidebar-title">Next-hop</p>
+<p>È il dispositivo successivo rispetto al device sotto esame, all’interno del percorso che unisce topologicamente due
+punti di interesse, ad esempio possono essere una coppia origine-destinazione</p>
+</div>
+<p>In quanto è possibile che 2 scelte diverse di next-hop portino allo stesso destinatario nella topologia, ma un next-hop
+è stato disconnesso poiché il collegamento prescelto non è più disponibile. Non mi concentro sulla seconda funzione e
+sul capire cosa succede nel caso che un collegamento non sia disponibile ma mi concentrerò sulla prima funzione e come
+influisce sulle performance della rete.</p>
+<p>Vi sono due metriche principali sulla performance di una rete che sono influenzati dall’algoritmo di routing:</p>
+<ol class="simple">
+<li><p>Throughput, la quantità di servizio offerta dalla rete</p></li>
+<li><p>Latenza media dei pacchetti, la qualità del servizio offerto dalla rete</p></li>
+</ol>
+<p>Il routing interagisce con il controllo di flusso per determinare queste metriche di performance attraverso un controllo
+a catena chiusa.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -282,14 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="sdn.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">&lt;no title&gt;</p>
-        </div>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
@@ -297,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
     <footer class="footer">
   <p>
     
-      By Andi Dulla<br/>
+      By The Jupyter Book Community<br/>
     
         &copy; Copyright 2021.<br/>
   </p>
