@@ -1,0 +1,17 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Strumenti
+    chapters:
+    - file: chapters/sensor
+  - caption: Algoritmi di ottimizzazione
+    chapters:
+    - file: chapters/optimization
+  - caption: Risultati simulazione
+    chapters:
+    - file: chapters/analisi_dati_rete_BOBI
+    - file: chapters/main_pipeline
+    - file: chapters/frank-wolfe
