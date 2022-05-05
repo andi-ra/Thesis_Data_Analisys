@@ -1,0 +1,1769 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Albero ricoprente di costo minimo capacitato &#8212; Tesi Andi Dulla</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Analisi dei dati ottenuti dalla applicazione di controllo distribuito" href="analisi_dati_rete_BOBI.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Tesi Andi Dulla</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   SDN forming per mobile IoT
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Strumenti
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sensor.html">
+   Reti di sensori
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algoritmi di ottimizzazione
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimization.html">
+   Ingegnerizzazione del traffico
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Risultati simulazione
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analisi_dati_rete_BOBI.html">
+   Analisi dei dati ottenuti dalla applicazione di controllo distribuito
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Albero ricoprente di costo minimo capacitato
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/chapters/main_pipeline.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapters/main_pipeline.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/main_pipeline.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/main_pipeline.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Albero ricoprente di costo minimo capacitato
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstract">
+     Abstract
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduzione">
+     Introduzione
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulazione-del-problema">
+     Formulazione del problema
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#descrizione-dei-vincoli">
+       Descrizione dei vincoli
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complessita">
+       Complessità
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ipotesi-operative">
+       Ipotesi operative
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algoritmo-genetico">
+     Algoritmo genetico
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrice-di-adiacenza-aleatoria">
+     Matrice di adiacenza aleatoria
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hall-of-fame">
+   Hall of fame
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add">
+     Add
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update">
+     Update
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#codifica">
+     Codifica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#codifica-dell-individuo">
+   Codifica dell’individuo
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descrizione-strutture-dati">
+     Descrizione strutture dati
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aspetti-salienti">
+     Aspetti salienti
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dimostrazione">
+       dimostrazione
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reshaping-function">
+     Reshaping function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descrizione-dell-algoritmo">
+     Descrizione dell’algoritmo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusioni">
+     Conclusioni
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#appendice">
+     Appendice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generatore-della-popolazione">
+   Generatore della popolazione
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funzione-fitness">
+     Funzione fitness
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funzione-di-conteggio-r-mathbf-x">
+     Funzione di conteggio
+     <span class="math notranslate nohighlight">
+      \(R(\mathbf{x})\)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#osservazioni">
+       Osservazioni
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calcolo-della-fitness">
+     Calcolo della fitness
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Osservazioni
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operatore-di-crossover">
+     Operatore di crossover
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-mutation">
+     Single Mutation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Albero ricoprente di costo minimo capacitato</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Albero ricoprente di costo minimo capacitato
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#abstract">
+     Abstract
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduzione">
+     Introduzione
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#formulazione-del-problema">
+     Formulazione del problema
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#descrizione-dei-vincoli">
+       Descrizione dei vincoli
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#complessita">
+       Complessità
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ipotesi-operative">
+       Ipotesi operative
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#algoritmo-genetico">
+     Algoritmo genetico
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrice-di-adiacenza-aleatoria">
+     Matrice di adiacenza aleatoria
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hall-of-fame">
+   Hall of fame
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add">
+     Add
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update">
+     Update
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#codifica">
+     Codifica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#codifica-dell-individuo">
+   Codifica dell’individuo
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descrizione-strutture-dati">
+     Descrizione strutture dati
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aspetti-salienti">
+     Aspetti salienti
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dimostrazione">
+       dimostrazione
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reshaping-function">
+     Reshaping function
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descrizione-dell-algoritmo">
+     Descrizione dell’algoritmo
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusioni">
+     Conclusioni
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#appendice">
+     Appendice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generatore-della-popolazione">
+   Generatore della popolazione
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funzione-fitness">
+     Funzione fitness
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funzione-di-conteggio-r-mathbf-x">
+     Funzione di conteggio
+     <span class="math notranslate nohighlight">
+      \(R(\mathbf{x})\)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#osservazioni">
+       Osservazioni
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calcolo-della-fitness">
+     Calcolo della fitness
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Osservazioni
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operatore-di-crossover">
+     Operatore di crossover
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-mutation">
+     Single Mutation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="albero-ricoprente-di-costo-minimo-capacitato">
+<h1>Albero ricoprente di costo minimo capacitato<a class="headerlink" href="#albero-ricoprente-di-costo-minimo-capacitato" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<p>Presento un algoritmo genetico con una codifica specializzata, inizializzazione aleatoria per ottimizzare topologie delle reti di telecomunicazione.Questo problema NP-hard è spesso così
+vincolato che un’inizializzazione aleatoria e algoritmi genetici standard generano spesso soluzioni inammissibili. Questa strategia di ottimizzazione può essere usata anche per altri problemi simili.</p>
+</div>
+<div class="section" id="introduzione">
+<h2>Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
+<p>Il problema CMST è un’estensione del MST (minimum spanning tree). Un problema che mi chiede di trovare quale struttura
+garantisca la connessione fra tutti i nodi con il costo minore. Qui considero un solo flusso d’informazioni (o merci),
+cioè single commodity. In generale queste informazioni scorrono su link di capacità finita da un nodo radice a dei nodi
+foglia che agiscono da “sink” delle informazioni, i consumatori.
+Il problema più spesso risolto nella pratica è quello del MST; dal quale deriviamo il protocollo di rete STP (spanning tree
+protocol) di livello link-local (ISO/OSI layer 2). Questa invece è una versione constrained (capacitata) MST.
+La formulazione proposta in questo progetto va in una direzione diversa,
+sappiamo che nel caso in cui ci sia un server centrale che spinge informazioni lungo la rete il limite di capacità dei link è ricavabile con un probelma di flusso massimo (risolvibile con ad esempio l’algoritmo di Ford&amp;Fulkerson).</p>
+<ul class="simple">
+<li><p>Che dire del caso in cui io abbia decine di nodi collegati al server centrale tramite una dorsale, come valuto la resilienza di una tale rete?</p></li>
+<li><p>Come posso garantire che il minor numero di utenti si scolleghi dalla rete nel caso in cui la dorsale si interrompa?</p></li>
+<li><p>Per quale tipo di metrica è meglio ottimizzare, la posa in opera dell’infrastruttura o la latenza sulla linea?</p></li>
+<li><p>Che dire della ridondanza della rete?</p></li>
+</ul>
+<p>Queste sono solo alcune delle domande che posso includere nel modello come “criteri” guida decisionali. Nel caso in
+esame prendo solo in considerazione le prime due domande della lista.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Vorrei limitare il numero di nodi che sono collegati alla radice attraverso un singolo collegamento (dorsale).
+</pre></div>
+</div>
+<p>Un primo modo per risolvere è avere un albero “bilanciato”, cioè con un numero di nodi circa uguale in ogni ramo della radice. Questo garantisce che, per esempio, se su <span class="math notranslate nohighlight">\( N \)</span> collegamenti uscenti dalla radice se ne interrompesse uno, avrei <span class="math notranslate nohighlight">\( \frac{1}{N} \)</span> utenti scollegati rispetto al totale. Lo stesso ragionamento lo posso ripetere ricorsivamente per ogni sottoalbero che si diparte dalla sorgente. Ciò che vorrei è limitare il numero massimo di utenti serviti da un certo collegamento, in modo da limitare il numero di utenti scollegati in caso di guasti su quello specifico collegamento.</p>
+</div>
+<div class="section" id="formulazione-del-problema">
+<h2>Formulazione del problema<a class="headerlink" href="#formulazione-del-problema" title="Permalink to this headline">¶</a></h2>
+<p>Una rete di telecomunicazioni può essere modellata da un grafo <span class="math notranslate nohighlight">\( G = (N, A) \)</span> con <span class="math notranslate nohighlight">\( N \)</span> insieme dei nodi che qui rappresenta un cliente che si connette alla rete (telecomunicazioni, gas, in generale è una rete di flusso). L’
+insieme <span class="math notranslate nohighlight">\( A \)</span> è l’insieme degli archi che sono attivi e che collegano i nodi nel grafo, in questo caso rappresentano linee attive ed utilizzabili. La rete si ipotizza usi collegamenti bidirezionali e quindi uso un grafo non
+orientato. Inoltre ipotizzo che non ci siano archi paralleli (ridondanti), questi in realtà si aggiungono per aumentare il data rate o l’affidabilità. Qui non vengono esaminati, anche se per questo algoritmo non cambia molto.</p>
+<p>Impostiamo il seguente programma:</p>
+<div class="math notranslate nohighlight">
+\[ Min \sum_{(i,j) \in A}\ c_{ij} x_{ij} \ \]</div>
+<div class="math notranslate nohighlight">
+\[ \sum_{(j,i) \in A}\ x_{ij} -  \sum_{(i,j) \in A}\ x_{ij} = b_j	 \quad \forall i \in N \qquad (1) \ \]</div>
+<div class="math notranslate nohighlight">
+\[ \sum_{(i,j) \in A}\ y_{ij}  	\leq 1 \quad \forall j \in N 	\setminus{i} \qquad (2) \ \]</div>
+<div class="math notranslate nohighlight">
+\[ \sum_{(i,j) \in S}\ x_{ij}  	\leq |S| - 1 \quad \forall S \in N  \qquad (3) \ \]</div>
+<div class="math notranslate nohighlight">
+\[ x_{ij} \leq  Qy_{ij}  	 \quad \forall (i,j)  \in A \qquad (4)	\ \]</div>
+<div class="math notranslate nohighlight">
+\[ y_{ij} \in \{ 0,1 \}  	 \quad \forall (i,j)  \in A \qquad (5)	\ \]</div>
+<div class="math notranslate nohighlight">
+\[ x_{ij} \geq 0 	 \quad \forall (i,j)  \in A 	\qquad (6) \ \]</div>
+<p><span class="math notranslate nohighlight">\( y_{ij} \)</span> sono le variabili decisionali (creo un collegamento fra <span class="math notranslate nohighlight">\( i \)</span> e <span class="math notranslate nohighlight">\( j \)</span>)</p>
+<p><span class="math notranslate nohighlight">\( x_{ij} \)</span> sono le variabili di flusso</p>
+<p>Questa variante single commodity del problema MST capacitato può essere modificata per accomodare altri tipi di flusso
+i quali non devono mescolarsi o che devono essere in generale sempre distinguibili (eg. traffico di controllo e traffico
+utenti) ottenendo la variante multicommodity.</p>
+<div class="section" id="descrizione-dei-vincoli">
+<h3>Descrizione dei vincoli<a class="headerlink" href="#descrizione-dei-vincoli" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Il vincolo <span class="math notranslate nohighlight">\( (1) \)</span> è il vincolo di conservazione del flusso, che garantisce che ogni utente venga soddisfatto con la sua
+richiesta di pacchetti e che i pacchetti non vengano creati o distrutti dal nulla.</p></li>
+<li><p>Il vincolo <span class="math notranslate nohighlight">\( (2) \)</span> è il vincolo che mi permette di selezionare un solo arco entrante nel generico nodo <span class="math notranslate nohighlight">\( i-esimo \)</span></p></li>
+<li><p>Il vincolo <span class="math notranslate nohighlight">\( (4) \)</span> è il vincolo di linking. Questo è il vincolo complicante, infatti se <span class="math notranslate nohighlight">\( y_{ij} = 0 \)</span> allora non scorre niente; invece se <span class="math notranslate nohighlight">\( y_{ij} = 1 \)</span> il flusso potrebbe non avere più limiti perché posso porre <span class="math notranslate nohighlight">\( Q \to \infty \)</span> (o comunque un big-M). Nel mio caso invece pongo <span class="math notranslate nohighlight">\( Q = n \)</span> con <span class="math notranslate nohighlight">\( n \)</span> un numero opportuno, un upper bound sul numero di nodi serviti da un certo arco. Questo upper bound sarà tanto più stringente quanto più il ramo è vicino alla radice (più sono in alto e più traffico trasporto).</p></li>
+<li><p>Il vincolo <span class="math notranslate nohighlight">\( (3) \)</span> è il vincolo di subtour elimination, ogni sottoinsieme di <span class="math notranslate nohighlight">\( k \)</span> nodi deve avere al massimo <span class="math notranslate nohighlight">\( k-1 \)</span> archi. Questo potrebbe essere sostituito da i vincoli di Miller-Tucker-Zemlin che sono in numero polinomiale.</p></li>
+</ul>
+</div>
+<div class="section" id="complessita">
+<h3>Complessità<a class="headerlink" href="#complessita" title="Permalink to this headline">¶</a></h3>
+<p>Questo problema a causa dei vincoli di linking è in complessità esponenziale. Questi vincoli legano le variabili
+decisionali con quelle di flusso.
+Come primo tentativo potrei fare un rilassamento continuo della variabile binaria <span class="math notranslate nohighlight">\( y_{ij} \)</span>. Questo però, porterebbe a snaturare il vincolo logico ottenendo <span class="math notranslate nohighlight">\( y_{ij} \geq  \frac{x_{ij}}{Q}\)</span> che per <span class="math notranslate nohighlight">\( Q \to \infty \)</span>
+che diverrebbe  <span class="math notranslate nohighlight">\( y_{ij} \geq 0 \)</span> e cioè un vincolo inutile.
+Oppure posso tentare di rafforzare la formulazione prendendo un <span class="math notranslate nohighlight">\( Q \)</span>p leggermente sopra la capacità massima (dunque non un big-M) e sottraendo la richiesta <span class="math notranslate nohighlight">\( b_j \)</span>. Attenzione, è possibile costruire un piccolo esempio che dimostra come questo porta a sottostimare i costi della rete.
+Costruirsi un rilassamento adeguato non è banale, dunque la prima soluzione euristica che ha dato dei risultati “accettabili” è quella dell’algoritmo genetico di seguito descritto.</p>
+</div>
+<div class="section" id="ipotesi-operative">
+<h3>Ipotesi operative<a class="headerlink" href="#ipotesi-operative" title="Permalink to this headline">¶</a></h3>
+<p>Ora proseguo con le ipotesi operative:</p>
+<ol class="simple">
+<li><p>La locazione di ogni nodo è già fornita</p></li>
+<li><p>I nodi sono perfettamente affidabili</p></li>
+<li><p>Ogni collegamento è bidirezionale</p></li>
+<li><p>Non ci sono collegamenti ridondanti</p></li>
+<li><p>I collegamenti sono attivi o rotti</p></li>
+<li><p>I fallimenti sono indipendenti fra loro</p></li>
+<li><p>Non vengono esaminate riparazioni</p></li>
+<li><p>La capacità <span class="math notranslate nohighlight">\( Q \)</span> è fissata ad un valore intero</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="algoritmo-genetico">
+<h2>Algoritmo genetico<a class="headerlink" href="#algoritmo-genetico" title="Permalink to this headline">¶</a></h2>
+<p>Inizializzo con tutti gli import e i parametri interattivi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\DULLA\PycharmProjects\Thesis_Data_Analisys&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">seed</span><span class="p">,</span> <span class="n">randint</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">process_time</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">CMST_package.population_generator</span> <span class="kn">import</span> <span class="n">draw_graph</span><span class="p">,</span> <span class="n">generate_population</span><span class="p">,</span> <span class="n">TREE_LIKE_LAYOUT</span><span class="p">,</span> <span class="n">breeding_mutation</span><span class="p">,</span> \
+<span class="n">self_mutation</span><span class="p">,</span> <span class="n">prim</span><span class="p">,</span> <span class="n">measure_branch</span>
+
+<span class="c1"># MODIFICAMI!</span>
+<span class="n">NUM_NODES</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">NUMB_GENER</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">MESH_LIKE_LAYOUT</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">HOF_SIZE</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">MAXIMUM_FITNESS</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">POP_SIZE</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">SELF_MUTATE_PROB</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">CROSS_MUTATE_PROB</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">ROOT</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">CAPACITY</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1">#img = mpimg.imread(&#39;../artifacts/flowchart.PNG&#39;)</span>
+<span class="c1">#plt.figure(figsize=(12, 12))</span>
+<span class="c1">#plt.axis(&quot;off&quot;)</span>
+
+<span class="c1">#imgplot = plt.imshow(img)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrice-di-adiacenza-aleatoria">
+<h2>Matrice di adiacenza aleatoria<a class="headerlink" href="#matrice-di-adiacenza-aleatoria" title="Permalink to this headline">¶</a></h2>
+<p>Per testare l’algoritmo ho bisogno di avere dei grafi di prova. Questi li posso produrre a partire da dati reali (ad esempio posizioni GPS) oppure posso generarli
+sinteticamente. Ho scelto la seconda strada perché più veloce, non devo stare a trovare dati significati e prepararli.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ADJACENCY_MATRIX</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_NODES</span><span class="p">)]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_NODES</span><span class="p">)]</span>
+
+
+<span class="k">def</span> <span class="nf">random_adjacency_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Funzione che crea una matrice di adiacenza aleatoria per la simulazione dell&#39;algoritmo. Questa sezione è necessaria</span>
+<span class="sd">    per testare come si comporta l&#39;algoritmo al variare del grafo, dei pesi o degli archi cioè di chi collego o no.</span>
+
+<span class="sd">    QUI IL SEED È PREFISSATO, NON È REALMENTE ALEATORIO, SE LO SI VUOLE ALEATORIO, TOGLIERE IL SEED</span>
+<span class="sd">    #TODO: la firma è simil-C e fa schifo, restituisci la matrice</span>
+
+<span class="sd">    :param matrix: matrice in cui appoggiare i risultati</span>
+<span class="sd">    :return: matrice del grafo su cui si lavora (da implementare il return)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">MAXIMUM_FITNESS</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ADJACENCY_MATRIX</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ADJACENCY_MATRIX</span><span class="p">[</span><span class="n">col</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="n">row</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span>
+            <span class="n">ADJACENCY_MATRIX</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="n">ADJACENCY_MATRIX</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+            <span class="k">if</span> <span class="n">row</span> <span class="o">!=</span> <span class="n">col</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">MAXIMUM_FITNESS</span><span class="p">:</span>
+                    <span class="n">MAXIMUM_FITNESS</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:3}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ADJACENCY_MATRIX</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+                <span class="n">matrix</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">ADJACENCY_MATRIX</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="hall-of-fame">
+<h1>Hall of fame<a class="headerlink" href="#hall-of-fame" title="Permalink to this headline">¶</a></h1>
+<p>Questo notebook descrive il modulo deputato a salvare le migliori soluzioni mai viste e a raccoglierle fino alla presentazione finale.</p>
+<p>È composto dai seguenti attributi:</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>individuals: coda degli individui migliori (vedi l’implementazione dell’<span class="xref myst">individuo</span>)</p></li>
+<li><p>size: dimensione della HOF (quante soluzioni considero le migliori)</p></li>
+<li><p>paths: lista in cui aggrego tutti gli MST migliori (utile per la visualizzazione)</p></li>
+</ol>
+</div></blockquote>
+<p>Essendo l’oggetto Hall of Fame un semplice contenitore delle soluzioni migliori, la sua implementazione è piuttosto semplice. Tutto
+ruota attorno alla coda <code class="docutils literal notranslate"><span class="pre">individuals</span></code> e definisco solo le seguenti operazioni:</p>
+<div class="section" id="add">
+<h2>Add<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
+
+<span class="kn">from</span> <span class="nn">CMST_package.hall_of_fame</span> <span class="kn">import</span> <span class="n">Hof</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">Hof</span><span class="o">.</span><span class="n">add</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    def add(self, individual):
+        &quot;&quot;&quot;
+        Aggiungi un nuovo membro alla hall of fame. Ho osservato una nuova soluzione e devo valutare se è il caso di
+        immetterlo nella hall of fame. Creo una coda ordinata (in ordine di fitness), inserisco gli individui mai visti
+        e quelli vecchi e poiché le dimensioni fra HOF e popolazione potrebbero essere diverse, fintanto che una delle
+        due non è vuota continua a immettere gli elementi dalla coda di appoggio alla HOF.
+
+        :type individual: Individual
+        :param individual: Individuo da aggiungere nella HOF
+        :return:
+        &quot;&quot;&quot;
+        temp = q.PriorityQueue()
+        while not self.individuals.empty():
+            old_ind = self.individuals.get()
+            if individual == old_ind:
+                continue
+            temp.put(old_ind)
+        # Se nella coda temporanea non c&#39;è questo individuo allora aggiungi
+        temp.put(individual)
+        # Finché hai individui a disposizione e posto nella coda hall of fame, aggiungi in ordine di fitness
+        while not self.individuals.full() and not temp.empty():
+            self.individuals.put(temp.get())
+</pre></div>
+</div>
+</div>
+</div>
+<p>Possiamo dire che qui c’è semplicemente un algoritmo che popola una coda con priorità i cui l’ordine è basato sulla fitness. Si distringuono
+i casi in cui sia la coda sia vuota (prima inizializzazione) e il caso in cui sia piena (nel ciclo evolutivo).
+Per l’implementazione ed una spiegazione dettagliata del codice fare riferimento alla documentazione.</p>
+</div>
+<div class="section" id="update">
+<h2>Update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<p>Questa funzioe è un po’ più interessante in quanto qui si vede l’operazione di selezione dei migliori. Questa operazione viene fatta
+prendendo la polazione, ordinandola in base alla fitness e poi selezionando (con uno slicing) i primi <code class="docutils literal notranslate"><span class="pre">size</span></code> elementi e infine
+questi li rimetto nella coda delle migliori soluzioni.
+Con una strutta dati del genere sono sicuro che i primi elementi saranno i migliori, questo torna utile nella visualizzazione finale.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">Hof</span><span class="o">.</span><span class="n">update</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    def update(self, population):
+        &quot;&quot;&quot;
+        Aggiorna la hall of fame poiché è cambiata la popolazione a seguito di un ciclo evolutivo. Il procedimento è il
+        seguente:
+        1. Ordina la popolazione in base alla fitness
+        2. Seleziona i migliori individui (i quali stanno in cima alla coda)
+        3. Per ognuno di questi individui migliori rimettili nella hall of fame
+
+        :type population: list
+        :param population: popolazione su cui valutare la hall of fame
+        :return:
+        &quot;&quot;&quot;
+        population.sort()
+        best_candidates = population[0:self.size]  # Slicing della lista e selezione dei migliori (da 0 a N)
+        for individual in best_candidates:
+            self.add(individual)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="codifica">
+<h2>Codifica<a class="headerlink" href="#codifica" title="Permalink to this headline">¶</a></h2>
+<p>Definisco come soluzione del mio problema una qualunque struttura connessa aciclica che garantisca la copertura di tutti i nodi della rete. Una tale soluzione è un albero ricoprente, quello a cui sono interessato è l’albero
+ricoprente di costo minimo soggetto al vincolo di capacità che dovrà essere rispettato per ogni singolo arco.
+Poiché con questo algoritmo genetico in uscita avrò un cromosoma (o una rappresentazione equivalente) la soluzione dunque è il cromosoma vincente di fra tutta la popolazione. A questo proposito devo rappresentare:</p>
+<ol class="simple">
+<li><p>Cosa è un cromosoma</p></li>
+<li><p>Come è fatto un cromosoma</p></li>
+</ol>
+<p><a class="reference external" href="https://doi.org/10.1080/03052150512331303436">Savic e Walter</a> hanno usato stringhe di interi a lunghezza variabile per rappresentare una rete di distribuzione idrica.</p>
+<p>Consultare il seguente notebook riguardante l’<span class="xref myst">individuo</span> soluzione e la sua codifica.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="codifica-dell-individuo">
+<h1>Codifica dell’individuo<a class="headerlink" href="#codifica-dell-individuo" title="Permalink to this headline">¶</a></h1>
+<p>Nel rappresentare una soluzione bisogna usare una struttura a grafo, più precisamente uno spanning tree con il costo globalmente minore e che rispetti il vincolo di capacità.</p>
+<div class="section" id="descrizione-strutture-dati">
+<h2>Descrizione strutture dati<a class="headerlink" href="#descrizione-strutture-dati" title="Permalink to this headline">¶</a></h2>
+<p>Per fare ciò uso l’oggetto <code class="docutils literal notranslate"><span class="pre">individual</span></code> che rappresenta un individuo della popolazione. Ogni oggetto contiene al suo interno:</p>
+<ul class="simple">
+<li><p><strong>tree</strong> che è la lista di tuple che implementa l’albero</p></li>
+<li><p><strong>fitness</strong> che rappresenta la fitness della soluzione</p></li>
+<li><p><strong>optim_type</strong> flag che indica se sto minimizzando o massimizzando</p></li>
+<li><p><strong>genotype</strong> lista di interi a lunghezza variabile che rappresenta la rete</p></li>
+</ul>
+</div>
+<div class="section" id="aspetti-salienti">
+<h2>Aspetti salienti<a class="headerlink" href="#aspetti-salienti" title="Permalink to this headline">¶</a></h2>
+<p>La scopo principale dell’oggetto <code class="docutils literal notranslate"><span class="pre">individual</span></code> è quello di rappresentarmi la rete in modo maneggiabile. Per farlo creo la rete e la memorizzo nell’attributo <em>genotype</em>, così che
+ogni individuo sia (all’inizio) una rete completa e poi a fine elaborazione un grafo (sperabilmente) soluzione.
+Ogni link possibile gli viene assegnato un intero che segnala la presenza dell’arco. Non solo questo intero segnala la presenza dell’arco ma rappresenta anche il
+peso dell’arco stesso nella lista <em>ordinata</em>. Ogni lista può definire in modo univoco quali collegamenti esistono e quali no.</p>
+<p>Mi appresto a dimostrare la seguente proposizione: la rappresentazione genoma &lt;-&gt; grafo è biunivoca e corretta.
+Questa proposizione implica che è possibile partire da una rappresentazione (compatibile con le librerie usate) sotto forma di grafo, ed arrivare ad una
+rappresentazione sotto forma di genoma (cioè lista di interi a lunghezza variabile) <em>e</em> <em>viceversa</em>.</p>
+<div class="section" id="dimostrazione">
+<h3>dimostrazione<a class="headerlink" href="#dimostrazione" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">CMST_package.individual</span> <span class="kn">import</span> <span class="n">Individual</span>
+<span class="kn">from</span> <span class="nn">CMST_package.population_generator</span> <span class="kn">import</span> <span class="n">draw_graph</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Costruisco il grafo assegnando come peso (ed etichetta identificativa) la coppia nodo-sorgente/nodo-destinatario dunque <span class="math notranslate nohighlight">\( C_{ij} = sorgente|destinazione \)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;01&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;02&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;03&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;04&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;05&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;12&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;13&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;14&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;15&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;23&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;24&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;25&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;34&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;35&quot;</span>
+<span class="n">G</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">5</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;45&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Creo e visualizzo il grafo full mesh con <span class="math notranslate nohighlight">\( n*(n-1) \)</span> archi, dove <span class="math notranslate nohighlight">\( n \)</span> è il numero di nodi nella rete, in questo caso 6. per cambiare numero nodi, modificare la sezione precedente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/main_pipeline_13_0.png" src="../_images/main_pipeline_13_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A questo punto genero la lista di adiacenza in modo da facilitare la conversione in lista normale. Segue poi la visualizzazione della lista di adiacenza.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrice di adiacenza: &quot;</span><span class="p">)</span>
+<span class="n">adj_list</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">generate_adjlist</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">arc</span> <span class="ow">in</span> <span class="n">adj_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Il nodo </span><span class="si">{0}</span><span class="s2"> è connesso con i seguenti nodi: </span><span class="se">\t</span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">arc</span><span class="p">))</span>
+    <span class="n">string</span> <span class="o">+=</span> <span class="n">arc</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matrice di adiacenza: 
+Il nodo 0 è connesso con i seguenti nodi: 	0 1 2 3 4 5
+Il nodo 1 è connesso con i seguenti nodi: 	1 2 3 4 5
+Il nodo 2 è connesso con i seguenti nodi: 	2 3 4 5
+Il nodo 3 è connesso con i seguenti nodi: 	3 4 5
+Il nodo 4 è connesso con i seguenti nodi: 	4 5
+Il nodo 5 è connesso con i seguenti nodi: 	5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da notare come la matrice sia triangolare, questo poiché il grafo è <em>non</em> orientato e quindi la lista di adiacenza stampata in forma matriciale non riporta gli
+archi in verso opposto. Attenzione alla prima colonna, quelli sono tutti collegamenti loopback, nella matrice di adiacenza sarebbero sulla diagonale. In questo caso
+non vengono considerati e in seguito verranno scartati.</p>
+<p>Ora proseguo con il mostrare come convertire questa rappresentazione lista-adiacenza in genoma in step successivi:
+1. Reshaping della lista di adiacenza in un vettore 1-d</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">string</span> <span class="k">if</span> <span class="n">item</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La lista srotolata in formato simil-genoma è: </span><span class="se">\n\t</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lista</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La lista srotolata in formato simil-genoma è: 
+	[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;4&#39;, &#39;5&#39;, &#39;5&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2. A questo punto creo un nuovo individuo di prova e gli assegno la lista di adiacenza srotolata come genoma.
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ind</span> <span class="o">=</span> <span class="n">Individual</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">iter_range</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
+<span class="n">ind</span><span class="o">.</span><span class="n">genotype</span> <span class="o">=</span> <span class="n">lista</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ind</span><span class="o">.</span><span class="n">genotype</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;4&#39;, &#39;5&#39;, &#39;5&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Qui vediamo la correttezza dell’operazione in un verso, da grafo l’ho trasformato in genoma.</p>
+<p>Adesso il viceversa. Partendo dallo steso individuo voglio, partendo dal suo genoma, ottenere il grafo originario:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Faccio il reshaping del genoma in lista di adiacenza (in forma matriciale), attenzione l&#39;etichetta dell&#39;arco è composta da _sorgente|destinazione|index_
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ind</span><span class="o">.</span><span class="n">reshape2matrix</span><span class="p">(</span><span class="n">NUM_NODES</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">matrix</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;0&#39; &#39;104&#39; &#39;204&#39; &#39;305&#39; &#39;402&#39; &#39;505&#39;]
+ [&#39;014&#39; &#39;0&#39; &#39;215&#39; &#39;311&#39; &#39;413&#39; &#39;512&#39;]
+ [&#39;024&#39; &#39;125&#39; &#39;0&#39; &#39;322&#39; &#39;424&#39; &#39;523&#39;]
+ [&#39;035&#39; &#39;131&#39; &#39;232&#39; &#39;0&#39; &#39;435&#39; &#39;534&#39;]
+ [&#39;042&#39; &#39;143&#39; &#39;244&#39; &#39;345&#39; &#39;0&#39; &#39;545&#39;]
+ [&#39;055&#39; &#39;152&#39; &#39;253&#39; &#39;354&#39; &#39;455&#39; &#39;0&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2. Creo una nuova matrice dei risultati eliminando la diagonale (in realtà la pongo a zero per problemi di incompatibilità fra librerie)
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shape</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0 10 20 30 40 50]
+ [ 1  0 21 31 41 51]
+ [ 2 12  0 32 42 52]
+ [ 3 13 23  0 43 53]
+ [ 4 14 24 34  0 54]
+ [ 5 15 25 35 45  0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>3. Visualizzazione del grafo a partire dalla lista di adiacenza, mi aspetto sia lo stesso grafo visualizzato all&#39;inizio.
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
+<span class="n">draw_graph</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/main_pipeline_25_0.png" src="../_images/main_pipeline_25_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>A meno di alcuni difetti dovuti alla gestione Python delle stringhe, i grafi sono gli stessi. In pratica <code class="docutils literal notranslate"><span class="pre">01</span></code> non è possibile visualizzarlo poiché diventa <code class="docutils literal notranslate"><span class="pre">1</span></code> dato che viene trattato
+come un intero e non un’etichetta.</p>
+</div>
+</div>
+<div class="section" id="reshaping-function">
+<h2>Reshaping function<a class="headerlink" href="#reshaping-function" title="Permalink to this headline">¶</a></h2>
+<p>Per riarrotolare il genoma dell’individuo devo tenere conto del fatto che il genoma è una versione undimensionale della matrice di adiacenza e che la matrice dei costi è una versione
+bidimensionale della lista di adiacenza. Sono entrambe rappresentazioni dei costi ma con forme (dimensioni) diverse. La sezione di codice che esegue l’operazione di riarrotolamento
+è la seguente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+   <span class="n">L</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>                            <span class="c1"># [&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;</span>
+   <span class="n">S</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>                            <span class="c1"># 1° step seleziono 0 poi con l&#39;indice L scorro verso</span>
+   <span class="n">index</span> <span class="o">=</span> <span class="n">L</span> <span class="o">*</span> <span class="p">(</span><span class="n">L</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>                      <span class="c1"># destra, ottenendo (0, 1) -&gt; (0,2) e così via</span>
+   <span class="n">index</span> <span class="o">+=</span> <span class="n">S</span> <span class="o">-</span> <span class="mi">1</span>                               <span class="c1"># uso l&#39;indice _index_ come terza cifra per far capire</span>
+   <span class="n">index</span> <span class="o">-=</span> <span class="n">L</span>                                   <span class="c1"># a che passaggio ero quando ho ricostruito quell&#39;arco</span>
+   <span class="n">matrix</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">genome</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>               <span class="c1"># sommo (o concateno) i singoli geni del genotipo.</span>
+   <span class="n">matrix</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]</span> <span class="o">+=</span> <span class="n">genome</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>              <span class="c1"># nella diagonale avrò sys.maxsize, cioè un peso infinito</span>
+   <span class="n">matrix</span><span class="p">[</span><span class="n">col</span><span class="p">][</span><span class="n">row</span><span class="p">]</span> <span class="o">+=</span> <span class="n">genome</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">index</span><span class="p">)]</span>       <span class="c1"># poiché non voglio archi loopback</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="descrizione-dell-algoritmo">
+<h2>Descrizione dell’algoritmo<a class="headerlink" href="#descrizione-dell-algoritmo" title="Permalink to this headline">¶</a></h2>
+<p>Per rendere la ricerca efficiente la popolazione iniziale consiste di reti a mesh rappresentate dall’individuo con genoma composto da <span class="math notranslate nohighlight">\( \frac{n*(n-1)}{2}  \)</span> interi.
+In sostanza tratto una popolazione come una lista di individui. Per una descrizione delle funzioni usate per l’evoluzione della popolazione
+e la fitness dell’individuo consultare il file riguadante la <span class="xref myst">popolazione</span>.</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>Setup dell’algoritmo</p></li>
+</ol>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * Settaggio dei parametri
+    * Matrice `ADJACENCY_MATRIX` come matrice iniziale in cui effetturae gli step intermedi (per non sporcare quella buona finale)
+</pre></div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Inizializzazione dell’algoritmo, creo la matrice di adiacenza aleatoria e la visualizzo</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">CMST_package.hall_of_fame</span> <span class="kn">import</span> <span class="n">Hof</span>
+
+<span class="n">seed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">Mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NUM_NODES</span><span class="p">,</span> <span class="n">NUM_NODES</span><span class="p">))</span>
+<span class="n">random_adjacency_matrix</span><span class="p">(</span><span class="n">Mat</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">Mat</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
+<span class="n">draw_graph</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">MESH_LIKE_LAYOUT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73   4  54  61  73   1  26  59  62 
+ 35  83  20   4  66  62  41   9 
+ 31  95  46   5  53  17  77 
+ 45  48  53  36  86  33 
+ 58  22  87  38  84 
+ 46  17  58  98 
+ 30  56  78 
+ 48   5 
+ 74 
+</pre></div>
+</div>
+<img alt="../_images/main_pipeline_28_1.png" src="../_images/main_pipeline_28_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Inizializzo la Hall of Fame per memorizzare le migliori soluzioni</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hall_of_fame</span> <span class="o">=</span> <span class="n">Hof</span><span class="p">(</span><span class="n">HOF_SIZE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Genero una popolazione con la quale lanciare l’algoritmo</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">genome</span> <span class="o">=</span> <span class="n">generate_population</span><span class="p">(</span><span class="n">POP_SIZE</span> <span class="o">+</span> <span class="p">(</span><span class="n">POP_SIZE</span> <span class="o">%</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">NUM_NODES</span> <span class="o">*</span> <span class="p">(</span><span class="n">NUM_NODES</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Valutazione della fitness di ogni individuo della popolazione e modifica dei parametri degli individui (riporto il codice per comodità)</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitness_evaluation</span><span class="p">(</span><span class="n">individuals</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">individuals</span><span class="p">:</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="n">ind</span><span class="o">.</span><span class="n">reshape2matrix</span><span class="p">(</span><span class="n">NUM_NODES</span><span class="p">)</span>
+
+        <span class="c1"># Apply Prim&#39;s Algorithm to get Tree</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">prim</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+        <span class="c1"># Depth first search starting from ROOT</span>
+        <span class="n">over_capacity</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
+            <span class="n">temp_weight</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ROOT</span><span class="p">:</span>
+                <span class="n">temp_weight</span> <span class="o">=</span> <span class="n">measure_branch</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ROOT</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">ROOT</span><span class="p">:</span>
+                <span class="n">temp_weight</span> <span class="o">=</span> <span class="n">measure_branch</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ROOT</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">temp_weight</span> <span class="o">&gt;</span> <span class="n">CAPACITY</span><span class="p">:</span>
+                <span class="n">ind</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">tree</span>
+                <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="n">MAXIMUM_FITNESS</span>
+                <span class="n">over_capacity</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Get weight of converted representation if under capacity</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">over_capacity</span><span class="p">:</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
+                <span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="o">=</span> <span class="n">edge</span>
+                <span class="n">weight</span> <span class="o">+=</span> <span class="n">ADJACENCY_MATRIX</span><span class="p">[</span><span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">ind</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">tree</span>
+            <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="n">weight</span>
+
+
+<span class="n">fitness_evaluation</span><span class="p">(</span><span class="n">genome</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Inizio a popolare la Hall of Fame e visualizzare le migliori soluzioni intermedie</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hall_of_fame</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">genome</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hall_of_fame</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitness: 328
+Tree: [(1, 5), (1, 10), (5, 7), (5, 2), (2, 9), (7, 6), (1, 8), (7, 3), (5, 4)]
+
+Fitness: 374
+Tree: [(1, 7), (7, 5), (5, 2), (5, 3), (7, 8), (7, 9), (2, 10), (2, 4), (5, 6)]
+
+Fitness: 417
+Tree: [(1, 5), (5, 6), (5, 3), (5, 2), (5, 8), (2, 10), (1, 7), (2, 9), (5, 4)]
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Loop evolutivo
+* Mutazione crossover
+* Mutazione singola dalla popolazione in uscita dal crossover
+* Valutazione della fitness
+* Update della Hall of Fame</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">process_time</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">cur_gen</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUMB_GENER</span><span class="p">):</span>
+    <span class="n">new_chromosome</span> <span class="o">=</span> <span class="n">breeding_mutation</span><span class="p">(</span><span class="n">genome</span><span class="p">,</span> <span class="n">CROSS_MUTATE_PROB</span><span class="p">)</span>
+    <span class="n">genome</span> <span class="o">=</span> <span class="n">self_mutation</span><span class="p">(</span><span class="n">new_chromosome</span><span class="p">,</span> <span class="n">SELF_MUTATE_PROB</span><span class="p">)</span>
+    <span class="n">fitness_evaluation</span><span class="p">(</span><span class="n">genome</span><span class="p">)</span>
+    <span class="n">hall_of_fame</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">genome</span><span class="p">)</span>
+
+<span class="n">stop</span> <span class="o">=</span> <span class="n">process_time</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Visualizzazione dei risultati</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">hall_of_fame</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time: &quot;</span><span class="p">,</span> <span class="n">stop</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ROOT: &quot;</span><span class="p">,</span> <span class="n">ROOT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAPACITY: &quot;</span><span class="p">,</span> <span class="n">CAPACITY</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitness: 335
+Tree: [(1, 5), (1, 8), (8, 6), (8, 2), (5, 7), (5, 4), (5, 9), (4, 3), (4, 10)]
+
+Fitness: 391
+Tree: [(1, 5), (5, 6), (6, 7), (1, 8), (5, 9), (1, 10), (5, 4), (6, 3), (10, 2)]
+
+Fitness: 419
+Tree: [(1, 9), (9, 3), (3, 5), (5, 4), (5, 2), (5, 7), (4, 8), (3, 10), (4, 6)]
+
+
+Time:  6.53125
+ROOT:  5
+CAPACITY:  4
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Plot di alcune soluzioni fra le migliori</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">hall_of_fame</span><span class="o">.</span><span class="n">paths</span><span class="p">:</span>
+    <span class="n">candidate</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">candidate</span> <span class="k">if</span> <span class="n">item</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+    <span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">TREE_LIKE_LAYOUT</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 5), (1, 10), (5, 7), (5, 2), (2, 9), (7, 6), (1, 8), (7, 3), (5, 4)]
+</pre></div>
+</div>
+<img alt="../_images/main_pipeline_42_1.png" src="../_images/main_pipeline_42_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 7), (7, 5), (5, 2), (5, 3), (7, 8), (7, 9), (2, 10), (2, 4), (5, 6)]
+</pre></div>
+</div>
+<img alt="../_images/main_pipeline_42_4.png" src="../_images/main_pipeline_42_4.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 5), (5, 6), (5, 3), (5, 2), (5, 8), (2, 10), (1, 7), (2, 9), (5, 4)]
+</pre></div>
+</div>
+<img alt="../_images/main_pipeline_42_7.png" src="../_images/main_pipeline_42_7.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 5), (1, 8), (8, 6), (8, 2), (5, 7), (5, 4), (5, 9), (4, 3), (4, 10)]
+</pre></div>
+</div>
+<img alt="../_images/main_pipeline_42_10.png" src="../_images/main_pipeline_42_10.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 5), (5, 6), (6, 7), (1, 8), (5, 9), (1, 10), (5, 4), (6, 3), (10, 2)]
+</pre></div>
+</div>
+<img alt="../_images/main_pipeline_42_13.png" src="../_images/main_pipeline_42_13.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(1, 9), (9, 3), (3, 5), (5, 4), (5, 2), (5, 7), (4, 8), (3, 10), (4, 6)]
+</pre></div>
+</div>
+<img alt="../_images/main_pipeline_42_16.png" src="../_images/main_pipeline_42_16.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conclusioni">
+<h2>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">¶</a></h2>
+<p>Da questi esperimenti eseguiti si vede come la fitness delle varie soluzioni sia piuttosto vicina (in termini percentuali) a quella della miglior soluzione. Ciò vuol dire che se la prima soluzione
+è molto buona allora anche le altre saranno un pochino peggio ma comunque usabili. Il problema è quando la miglior soluzione ha una fitness vicino al valore <code class="docutils literal notranslate"><span class="pre">MAXIMUM_FITNESS</span></code>, in tal
+caso è molto probabile trovare qualche soluzione che violi i vincoli o che abbia caratteristiche pessime. In molti casi (verificabile lanciando più volte l’algoritmo) si scopre che le
+soluzioni con fitness più bassa (e quindi più desiderabili) di solito sono costituite da alberi all’incirca bilanciati. Questo conferma l’intuizione iniziale descritta nella discussione
+delle possibili modalità di soluzione tramite rilassamento. Un’ultima nota, questo algoritmo essendo un’euristica fornisce soluzioni che non posso sapere se sono ottime, quindi non
+dovrebbero guidare decisioni sensibili/strategiche ma solo fornire un’indicazione di massima.</p>
+</div>
+<div class="section" id="appendice">
+<h2>Appendice<a class="headerlink" href="#appendice" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="generatore-della-popolazione">
+<h1>Generatore della popolazione<a class="headerlink" href="#generatore-della-popolazione" title="Permalink to this headline">¶</a></h1>
+<p>Questo modulo contiene tutte le funzioni necessarie all’algoritmo genetico. Non prevedo un oggetto “problema” con cui agganciare tutti i metodi o gli attributi ma sono
+distribuiti nel file.</p>
+<div class="section" id="funzione-fitness">
+<h2>Funzione fitness<a class="headerlink" href="#funzione-fitness" title="Permalink to this headline">¶</a></h2>
+<p>Definisco la fitness come il costo associato alla soluzione albero nel seguente modo:</p>
+<p><span class="math notranslate nohighlight">\(\sum_{(i,j) \in A} c_{ij}x_{ij} + \delta(c_{max}(R(\mathbf{x}) - R_0)^2)\)</span></p>
+<p><span class="math notranslate nohighlight">\( \delta =  \begin{cases}
+      0 &amp; R(\mathbf{x}) &lt; R_0 \\
+      1 &amp; R(\mathbf{x}) \ge R_0
+   \end{cases} \)</span></p>
+<p><span class="math notranslate nohighlight">\( c_{max} = max(c_{ij}) \qquad R_0 \)</span> è il target di capacità massima che voglio per ogni arco</p>
+<p>Sia dato un grafo <span class="math notranslate nohighlight">\( G = (N, A) \)</span> e un albero di copertura <span class="math notranslate nohighlight">\(T \subset A \)</span>. Definiamo la funzione <span class="math notranslate nohighlight">\(R(\mathbf{x}) : A \rightarrow \Re \)</span> con <span class="math notranslate nohighlight">\( \mathbf{x} \in T\)</span>
+vettore di archi, come la funzione di conteggio dei nodi che vengono serviti da un certo arco <span class="math notranslate nohighlight">\( x_{ij} \)</span>, gli archi appartengono tutti all’albero <span class="math notranslate nohighlight">\(T\)</span> sotto esame.
+Questa funzione mi dice qual è il numero totale di nodi che un certo arco sta servendo.</p>
+<p>Questa formulazione può essere vista come una formulazione rilassata di quella originale. In particolare ho rilassato con la variabile indicatore il vincolo del
+rispetto della capacità. Come descritto sopra ho usato una funzione di accumulazione  <span class="math notranslate nohighlight">\( R(\mathbf{x}) \)</span> e non più la formulazione classica basata su archi.</p>
+<p>Poiché nella formulazione originale i vincoli accoppianti erano proprio quelli di capacità e sono sempre questi che rendono il problema NP-hard, è naturale lavorare
+principalmente su questo vincoli e poi pensare all’interezza delle variabili (si veda la formulazione nel file <span class="xref myst">principale</span>).</p>
+<p>Se considerassi <span class="math notranslate nohighlight">\(\delta\)</span> come una sorta di moltiplicatore di Lagrange frutto del rilassamento (col quale penalizzo il non rispetto del vincolo <span class="math notranslate nohighlight">\( R(\mathbf{x}) &lt; R_0 \)</span>)
+allora ha senso inserire il termine <span class="math notranslate nohighlight">\(\delta(c_{max}(R(\mathbf{x}) - R_0)^2)\)</span> come penalità nella funzione fitness.</p>
+</div>
+<div class="section" id="funzione-di-conteggio-r-mathbf-x">
+<h2>Funzione di conteggio <span class="math notranslate nohighlight">\(R(\mathbf{x})\)</span><a class="headerlink" href="#funzione-di-conteggio-r-mathbf-x" title="Permalink to this headline">¶</a></h2>
+<p>Per il conteggio si usa la seguente funzione <code class="docutils literal notranslate"><span class="pre">measure_branch</span></code>, si riporta di seguitio il codice per comodità:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span><span class="p">,</span> <span class="n">randint</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">CMST_package.individual</span> <span class="kn">import</span> <span class="n">Individual</span>
+<span class="kn">from</span> <span class="nn">CMST_package.population_generator</span> <span class="kn">import</span> <span class="n">measure_branch</span><span class="p">,</span> <span class="n">draw_graph</span><span class="p">,</span> <span class="n">self_mutation</span>
+
+<span class="n">NUM_NODES</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">CAPACITY</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">MAXIMUM_FITNESS</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">POP_SIZE</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">TOURNAMENT_SIZE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">breeding_mutation_pb</span> <span class="o">=</span> <span class="mf">0.3</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">measure_branch</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def measure_branch(tree, parent, prev):
+    &quot;&quot;&quot;
+    Questa funzione conta in modo ricorsivo quanti nodi ci sono in un certo sottoalbero/brach e mi accumula il tutto.
+
+    :param tree:
+    :param parent:
+    :param prev:
+    :return:
+    &quot;&quot;&quot;
+    weight = 0
+    for edge in tree:
+        if edge[0] == parent and edge[1] != prev:
+            weight += measure_branch(tree, edge[1], parent)
+        elif edge[0] != prev and edge[1] == parent:
+            weight += measure_branch(tree, edge[0], parent)
+    return weight + 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>La funzione sopra riportata esegue in modo ricorsivo una ricerca simile allo stile breadth-first in modo ricorsivo.
+Per ulteriori dettagli si veda la documentazione.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. Creo un individuo di test:
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NUM_NODES</span><span class="p">,</span> <span class="n">NUM_NODES</span><span class="p">))</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">Individual</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">NUM_NODES</span> <span class="o">*</span> <span class="p">(</span><span class="n">NUM_NODES</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">min</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">iter_range</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2. Rieseguo la procedura per ritornare dal genoma (aleatorio) del mio [individuo](individual.ipynb) test alla matrice di adiacenza (con cui posso lavorare)
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ind</span><span class="o">.</span><span class="n">reshape2matrix</span><span class="p">(</span><span class="n">NUM_NODES</span><span class="p">))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">matrix</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+<span class="n">shape</span> <span class="o">=</span> <span class="n">matrix</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span>
+<span class="n">draw_graph</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/main_pipeline_48_0.png" src="../_images/main_pipeline_48_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>3. Ottengo un MST classico con l&#39;algoritmo di Prim
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">CMST_package.population_generator</span> <span class="kn">import</span> <span class="n">prim</span>
+
+<span class="n">tree</span> <span class="o">=</span> <span class="n">prim</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="p">[</span><span class="n">arc</span> <span class="k">for</span> <span class="n">arc</span> <span class="ow">in</span> <span class="n">tree</span> <span class="k">if</span> <span class="n">arc</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+<span class="n">draw_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/main_pipeline_50_0.png" src="../_images/main_pipeline_50_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 864x864 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>4. Conto i nodi che ci sono in ogni ramo con una procedura breadth-first search, realizzando un primo prototipo della funzione $R(\mathbf{x})$
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Depth first search starting from ROOT</span>
+<span class="n">over_capacity</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">ROOT</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">tree_final</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
+    <span class="n">temp_weight</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">ROOT</span><span class="p">:</span>
+        <span class="n">temp_weight</span> <span class="o">=</span> <span class="n">measure_branch</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ROOT</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dal nodo radice </span><span class="si">{0}</span><span class="s2"> ho </span><span class="si">{1}</span><span class="s2"> nodi&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ROOT</span><span class="p">,</span> <span class="n">temp_weight</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">ROOT</span><span class="p">:</span>
+        <span class="n">temp_weight</span> <span class="o">=</span> <span class="n">measure_branch</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ROOT</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nodi incidenti nella radice----&gt; </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp_weight</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">temp_weight</span> <span class="o">&gt;</span> <span class="n">CAPACITY</span><span class="p">:</span>
+        <span class="n">tree_final</span> <span class="o">=</span> <span class="n">tree</span>
+        <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="n">MAXIMUM_FITNESS</span>
+        <span class="n">over_capacity</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;Violato il vincolo di capacità!! Ho </span><span class="si">{0}</span><span class="s2"> nodi nell&#39;arco </span><span class="si">{1}</span><span class="s2"> arco invece che </span><span class="si">{2}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp_weight</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span>
+                                                                                                     <span class="n">CAPACITY</span><span class="p">))</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dal nodo radice 1 ho 6 nodi
+Violato il vincolo di capacità!! Ho 6 nodi nell&#39;arco (1, 6) arco invece che 4 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="osservazioni">
+<h3>Osservazioni<a class="headerlink" href="#osservazioni" title="Permalink to this headline">¶</a></h3>
+<p>Poiché questi genomi sono (per facilitare di test) aleatori, è probabile che si possano incontrare casi in cui un arco sia sovraccarico.
+Quando questo accade scatta la guardia situata nell’ultimo <code class="docutils literal notranslate"><span class="pre">if</span></code> e cioè:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+<span class="k">if</span> <span class="n">temp_weight</span> <span class="o">&gt;</span> <span class="n">CAPACITY</span><span class="p">:</span>
+    <span class="n">tree_final</span> <span class="o">=</span> <span class="n">tree</span>
+    <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="n">MAXIMUM_FITNESS</span>
+    <span class="n">over_capacity</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Violato il vincolo di capacità!! Ho </span><span class="si">{0}</span><span class="s2"> nodi nell&#39;arco </span><span class="si">{1}</span><span class="s2"> arco invece che </span><span class="si">{2}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp_weight</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">CAPACITY</span><span class="p">))</span>
+    <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="calcolo-della-fitness">
+<h2>Calcolo della fitness<a class="headerlink" href="#calcolo-della-fitness" title="Permalink to this headline">¶</a></h2>
+<p><strong>Se</strong> il numero di nodi rispetta il vincolo di capacità si passa al calcolo del costo effettivo sulla <em>matrice</em> <em>originale</em> <span class="math notranslate nohighlight">\(\sum_{(i,j) \in A} c_{ij}x_{ij} \)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">over_capacity</span><span class="p">:</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
+        <span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span> <span class="o">=</span> <span class="n">edge</span>
+        <span class="n">weight</span> <span class="o">+=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">col</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">ind</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">tree</span>
+    <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span> <span class="o">=</span> <span class="n">weight</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Costo dell&#39;albero soluzione: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Non ho trovato soluzioni, riprova a lanciare l&#39;algoritmo...&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Non ho trovato soluzioni, riprova a lanciare l&#39;algoritmo...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Osservazioni<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Anche qui bisogna precisare che mi sono allontanato leggermente dalla formulazione originale. Il costo <span class="math notranslate nohighlight">\(\sum_{(i,j) \in A} c_{ij}x_{ij} \)</span> è calcolato sulla matrice
+originale, cioè quella data in input da ottimizzare, ma se l’individuo sotto esame ha un albero che non rispetta i vincoli di capacità allora gli
+viene assegnata una fitness massima (nel codice è uguale a <code class="docutils literal notranslate"><span class="pre">MAXIMUM_FITNESS</span></code>) e viene calcolato il costo comunque. Questo costo, che viene tradotto in
+fitness dalle funzioni <code class="docutils literal notranslate"><span class="pre">fitness_evaluation</span></code> e <code class="docutils literal notranslate"><span class="pre">measure_branch</span></code> sarà sopra al valore <code class="docutils literal notranslate"><span class="pre">MAXIMUM_FITNESS</span></code>, rendendo questo individuo inutile.</p>
+<ul class="simple">
+<li><p>Per quale motivo tenere delle soluzioni che violano il vincolo di capacità?
+Poiché può succedere che nonostante tutte le iterazioni non riesco a generare un numero sufficiente di soluzioni ammissibili (per vederlo basta allargare la dimensione
+Hall of Fame e diminuire le iterazioni e si osservano soluzioni assurde addirittura con cicli…)</p></li>
+<li><p>Come mi accorgo di avere una soluzione finale che viola questi vincoli?
+Basta osservare la sua fitness, se è pari a <code class="docutils literal notranslate"><span class="pre">MAXIMUM_FITNESS</span></code> allora la soluzione è inammissibile, oppure anche se non del tutto inammissibile (cioé mi accontento
+di qualcosa di papabile) questa soluzione sarà pessima. (Invito a provare con varie dimensioni di Hall of Fame e iterazioni nel loop evolutivo).</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="operatore-di-crossover">
+<h2>Operatore di crossover<a class="headerlink" href="#operatore-di-crossover" title="Permalink to this headline">¶</a></h2>
+<p>La mutazione a coppia implementata qui è un crossover uniforme. Per mostrare come opera questa funzione:</p>
+<blockquote>
+<div><ol class="simple">
+<li><p>Creazione di una popolazione iniziale (per l’implementazione del generatore di popolazioni si veda la documentazione)</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">CMST_package.population_generator</span> <span class="kn">import</span> <span class="n">generate_population</span>
+
+<span class="n">individuals</span> <span class="o">=</span> <span class="n">generate_population</span><span class="p">(</span><span class="n">POP_SIZE</span> <span class="o">+</span> <span class="p">(</span><span class="n">POP_SIZE</span> <span class="o">%</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">NUM_NODES</span> <span class="o">*</span> <span class="p">(</span><span class="n">NUM_NODES</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Selezione del gruppo che si accoppierà</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">group_A</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">group_B</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c1"># Selezione di chi si accoppia Tournament style</span>
+<span class="n">mating_group</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">mating_group</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">individuals</span><span class="p">):</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">TOURNAMENT_SIZE</span><span class="p">):</span>
+        <span class="c1"># Scegli un individuo a caso</span>
+        <span class="n">ind</span> <span class="o">=</span> <span class="n">individuals</span><span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">individuals</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]</span>
+        <span class="c1"># Se l&#39;individuo scelto a caso ha una fitness maggiore -&gt; prendilo</span>
+        <span class="k">if</span> <span class="n">best</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span> <span class="o">&gt;</span> <span class="n">best</span><span class="o">.</span><span class="n">fitness</span><span class="p">:</span>
+            <span class="n">best</span> <span class="o">=</span> <span class="n">ind</span>
+    <span class="n">mating_group</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Visualizzazione di un individuo a caso: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mating_group</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Visualizzazione di un individuo a caso: 56 51 26 52 185 26 241 135 249 86 121 180 75 221 250 84 112 145 130 210 68 82 42 109 243 137 5 207 
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Estrazione a coppie dei genitori e ripopolazione della “lista padri” e della “lista madri”</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">mating_group</span><span class="p">:</span>
+    <span class="n">group_A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mating_group</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+    <span class="n">group_B</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mating_group</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><ol class="simple">
+<li><p>Crossover</p></li>
+</ol>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ret</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">group_A</span><span class="p">)):</span>
+    <span class="n">ind1</span> <span class="o">=</span> <span class="n">group_A</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">ind2</span> <span class="o">=</span> <span class="n">group_B</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">breeding_mutation_pb</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind1</span><span class="p">))):</span>
+            <span class="c1"># Qui avviene lo scambio</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">ind1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">ind1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ind2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">ind2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+    <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind1</span><span class="p">)</span>
+    <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="single-mutation">
+<h2>Single Mutation<a class="headerlink" href="#single-mutation" title="Permalink to this headline">¶</a></h2>
+<p>In modo simile a come fatto per la mutazione a coppia si procede qui nella mutazione del singolo individuo. In pratica seleziono un gene (che qui
+sono i costi della lista di adiacenza) e li modifico in modo casuale in modo da cambiare il costo del singolo arco.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">self_mutation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def self_mutation(individuals, mutation_pb):
+    &quot;&quot;&quot;
+    Self-mutation qui con questa funzione modifico il genotipo del singolo individuo, in pratica è come se gli
+    modificassi la matrice equivalente dei costi in modo casuale.
+    Potrei modificare un ramo, ma se così facessi otterrei una euristica di scambio (branch exchange heuristic).
+    Non seguo questa seconda strada (altrimenti otterrei qualcosa come Esau-Williams) modifico la matrice di adiacenza.
+
+    :param individuals: popolazione da mutare (in pratica un insieme di individui)
+    :param mutation_pb: probabilità di mutazione di un gene
+    :return:
+    &quot;&quot;&quot;
+    for individual in individuals:
+        for value in individual:
+            if random.random() &lt; mutation_pb:
+                value = random.randrange(0, INDEX_RANGE)
+    return individuals
+</pre></div>
+</div>
+</div>
+</div>
+<p>Per dettagli e scelte implementative si veda la documentazione delle funzion, oppure il <code class="docutils literal notranslate"><span class="pre">help()</span></code> delle funzioni.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="analisi_dati_rete_BOBI.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Analisi dei dati ottenuti dalla applicazione di controllo distribuito</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Andi Dulla<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
