@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# Ingegnerizzazione del traffico
+# Ottimizzazione del traffico
 
 In questo capitolo vado a mostrare gli aspetti di modellazione del sistema, enunciare il problema e gli algoritmi
 proposti.

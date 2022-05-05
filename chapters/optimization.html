@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ingegnerizzazione del traffico &#8212; Tesi Andi Dulla</title>
+    <title>Ottimizzazione del traffico &#8212; Tesi Andi Dulla</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Analisi dei dati ottenuti dalla applicazione di controllo distribuito" href="analisi_dati_rete_BOBI.html" />
+    <link rel="next" title="Distribuzioni stabili" href="stable.html" />
     <link rel="prev" title="Reti di sensori" href="sensor.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -112,13 +112,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Algoritmi di ottimizzazione
+  Teoria
  </span>
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Ingegnerizzazione del traffico
+   Ottimizzazione del traffico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stable.html">
+   Distribuzioni stabili
   </a>
  </li>
 </ul>
@@ -252,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Ingegnerizzazione del traffico</h1>
+                <h1>Ottimizzazione del traffico</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -263,8 +268,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="ingegnerizzazione-del-traffico">
-<h1>Ingegnerizzazione del traffico<a class="headerlink" href="#ingegnerizzazione-del-traffico" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="ottimizzazione-del-traffico">
+<h1>Ottimizzazione del traffico<a class="headerlink" href="#ottimizzazione-del-traffico" title="Permalink to this headline">¶</a></h1>
 <p>In questo capitolo vado a mostrare gli aspetti di modellazione del sistema, enunciare il problema e gli algoritmi
 proposti.</p>
 <p>Introduzione Il routing in una rete è un’operazione complessa che coinvolge molti attori e protcolli che permettono
@@ -436,16 +441,173 @@ potrà ammettere traffico ed aumentare così il throughput che la rete offre.</p
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/optimization_1_0.png" src="../_images/optimization_1_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average wait = 274448.294
-received: 80145, dropped 332, sent 80145
-loss rate: 0.004142491733732609
-average system occupancy: 2738.686
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average wait = 276460.046
+received: 80340, dropped 224, sent 80340
+loss rate: 0.002788150360965895
+average system occupancy: 2760.723
 </pre></div>
 </div>
 <img alt="../_images/optimization_1_2.png" src="../_images/optimization_1_2.png" />
 <img alt="../_images/optimization_1_3.png" src="../_images/optimization_1_3.png" />
 <img alt="../_images/optimization_1_4.png" src="../_images/optimization_1_4.png" />
-<img alt="../_images/optimization_1_5.png" src="../_images/optimization_1_5.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 108&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Latenza media con coda lunga 100000&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">avgWait</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">avgWait</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">single</span><span class="p">)})</span>
+<span class="ne">--&gt; </span><span class="mi">108</span> <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="n">p</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="n">p</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Latency&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Simulation run number&quot;</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\_decorators.py:46,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="s2">&quot;Pass the following variable</span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">keyword arg</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>         <span class="s2">&quot;From version 0.12, the only valid positional argument &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="ne">FutureWarning</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="p">)</span>
+<span class="nn">     45 kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\regression.py:863,</span> in <span class="ni">regplot</span><span class="nt">(x, y, data, x_estimator, x_bins, x_ci, scatter, fit_reg, ci, n_boot, units, seed, order, logistic, lowess, robust, logx, x_partial, y_partial, truncate, dropna, x_jitter, y_jitter, label, color, marker, scatter_kws, line_kws, ax)</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span> <span class="n">scatter_kws</span><span class="p">[</span><span class="s2">&quot;marker&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">marker</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span> <span class="n">line_kws</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">line_kws</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">line_kws</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">863</span> <span class="n">plotter</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="p">,</span> <span class="n">line_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span> <span class="k">return</span> <span class="n">ax</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\regression.py:370,</span> in <span class="ni">_RegressionPlotter.plot</span><span class="nt">(self, ax, scatter_kws, line_kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span>     <span class="bp">self</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_reg</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">370</span>     <span class="bp">self</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">line_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="c1"># Label the axes</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">):</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\regression.py:413,</span> in <span class="ni">_RegressionPlotter.lineplot</span><span class="nt">(self, ax, kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span> <span class="sd">&quot;&quot;&quot;Draw the model.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span> <span class="c1"># Fit the regression model</span>
+<span class="ne">--&gt; </span><span class="mi">413</span> <span class="n">grid</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">err_bands</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_regression</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">grid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="c1"># Get set default aesthetics</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\regression.py:227,</span> in <span class="ni">_RegressionPlotter.fit_regression</span><span class="nt">(self, ax, x_range, grid)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="n">err_bands</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">227</span>     <span class="n">err_bands</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">ci</span><span class="p">(</span><span class="n">yhat_boots</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span> <span class="k">return</span> <span class="n">grid</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">err_bands</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\utils.py:475,</span> in <span class="ni">ci</span><span class="nt">(a, which, axis)</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span> <span class="sd">&quot;&quot;&quot;Return a percentile range from an array of values.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">-</span> <span class="n">which</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="n">which</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="ne">--&gt; </span><span class="mi">475</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">nanpercentile</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\nanfunctions.py:1385,</span> in <span class="ni">nanpercentile</span><span class="nt">(a, q, axis, out, overwrite_input, method, keepdims, interpolation)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1383</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">function_base</span><span class="o">.</span><span class="n">_quantile_is_valid</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Percentiles must be in the range [0, 100]&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1385</span> <span class="k">return</span> <span class="n">_nanquantile_unchecked</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1386</span>     <span class="n">a</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\nanfunctions.py:1560,</span> in <span class="ni">_nanquantile_unchecked</span><span class="nt">(a, q, axis, out, overwrite_input, method, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1560</span> <span class="n">r</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">function_base</span><span class="o">.</span><span class="n">_ureduce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1561</span>                               <span class="n">func</span><span class="o">=</span><span class="n">_nanquantile_ureduce_func</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1562</span>                               <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1563</span>                               <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1564</span>                               <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1565</span>                               <span class="n">overwrite_input</span><span class="o">=</span><span class="n">overwrite_input</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1566</span>                               <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1567</span> <span class="k">if</span> <span class="n">keepdims</span> <span class="ow">and</span> <span class="n">keepdims</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1568</span>     <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:3702,</span> in <span class="ni">_ureduce</span><span class="nt">(a, func, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3699</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3700</span>     <span class="n">keepdim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span>
+<span class="ne">-&gt; </span><span class="mi">3702</span> <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3703</span> <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">keepdim</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\nanfunctions.py:1584,</span> in <span class="ni">_nanquantile_ureduce_func</span><span class="nt">(a, q, axis, out, overwrite_input, method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_nanquantile_1d</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">_nanquantile_1d</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span>                                  <span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="c1"># apply_along_axis fills in collapsed axis with results.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1587</span>     <span class="c1"># Move that axis to the beginning to match percentile&#39;s</span>
+<span class="g g-Whitespace">   </span><span class="mi">1588</span>     <span class="c1"># convention.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1589</span>     <span class="k">if</span> <span class="n">q</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">apply_along_axis</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\shape_base.py:402,</span> in <span class="ni">apply_along_axis</span><span class="nt">(func1d, axis, arr, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">400</span> <span class="n">buff</span><span class="p">[</span><span class="n">ind0</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+<span class="g g-Whitespace">    </span><span class="mi">401</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">402</span>     <span class="n">buff</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">func1d</span><span class="p">(</span><span class="n">inarr_view</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="c1"># wrap the array, to preserve subclasses</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="n">buff</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">__array_wrap__</span><span class="p">(</span><span class="n">buff</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\nanfunctions.py:1608,</span> in <span class="ni">_nanquantile_1d</span><span class="nt">(arr1d, q, overwrite_input, method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1604</span> <span class="k">if</span> <span class="n">arr1d</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1605</span>     <span class="c1"># convert to scalar</span>
+<span class="g g-Whitespace">   </span><span class="mi">1606</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">arr1d</span><span class="o">.</span><span class="n">dtype</span><span class="p">)[()]</span>
+<span class="ne">-&gt; </span><span class="mi">1608</span> <span class="k">return</span> <span class="n">function_base</span><span class="o">.</span><span class="n">_quantile_unchecked</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1609</span>     <span class="n">arr1d</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">overwrite_input</span><span class="o">=</span><span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:4383,</span> in <span class="ni">_quantile_unchecked</span><span class="nt">(a, q, axis, out, overwrite_input, method, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4375</span> <span class="k">def</span> <span class="nf">_quantile_unchecked</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4376</span>                         <span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4377</span>                         <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4380</span>                         <span class="n">method</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4381</span>                         <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4382</span>     <span class="sd">&quot;&quot;&quot;Assumes that q is in [0, 1], and is an ndarray&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4383</span>     <span class="n">r</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">_ureduce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4384</span>                     <span class="n">func</span><span class="o">=</span><span class="n">_quantile_ureduce_func</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4385</span>                     <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4386</span>                     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4387</span>                     <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4388</span>                     <span class="n">overwrite_input</span><span class="o">=</span><span class="n">overwrite_input</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4389</span>                     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4390</span>     <span class="k">if</span> <span class="n">keepdims</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4391</span>         <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:3702,</span> in <span class="ni">_ureduce</span><span class="nt">(a, func, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3699</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3700</span>     <span class="n">keepdim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span>
+<span class="ne">-&gt; </span><span class="mi">3702</span> <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3703</span> <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">keepdim</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:4552,</span> in <span class="ni">_quantile_ureduce_func</span><span class="nt">(a, q, axis, out, overwrite_input, method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4550</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4551</span>         <span class="n">arr</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">4552</span> <span class="n">result</span> <span class="o">=</span> <span class="n">_quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4553</span>                    <span class="n">quantiles</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4554</span>                    <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4555</span>                    <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4556</span>                    <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4557</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:4650,</span> in <span class="ni">_quantile</span><span class="nt">(arr, quantiles, axis, method, out)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4646</span> <span class="n">previous_indexes</span><span class="p">,</span> <span class="n">next_indexes</span> <span class="o">=</span> <span class="n">_get_indexes</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4647</span>                                               <span class="n">virtual_indexes</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4648</span>                                               <span class="n">values_count</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4649</span> <span class="c1"># --- Sorting</span>
+<span class="ne">-&gt; </span><span class="mi">4650</span> <span class="n">arr</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4651</span>     <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">4652</span>                               <span class="n">previous_indexes</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+<span class="g g-Whitespace">   </span><span class="mi">4653</span>                               <span class="n">next_indexes</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+<span class="g g-Whitespace">   </span><span class="mi">4654</span>                               <span class="p">))),</span>
+<span class="g g-Whitespace">   </span><span class="mi">4655</span>     <span class="n">axis</span><span class="o">=</span><span class="n">DATA_AXIS</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4656</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inexact</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4657</span>     <span class="n">slices_having_nans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4658</span>         <span class="n">take</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">indices</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">DATA_AXIS</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4659</span>     <span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+<img alt="../_images/optimization_1_6.png" src="../_images/optimization_1_6.png" />
 </div>
 </div>
 <p>Da questi grafici vediamo come il traffico sia da trattare in modo diverso rispetto alla classica elaborazione statistica
@@ -486,10 +648,10 @@ verranno esposti nell’ultimo capitolo che presenta le applicazioni e i risulta
             <p class="prev-next-title">Reti di sensori</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="analisi_dati_rete_BOBI.html" title="next page">
+    <a class='right-next' id="next-link" href="stable.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Analisi dei dati ottenuti dalla applicazione di controllo distribuito</p>
+        <p class="prev-next-title">Distribuzioni stabili</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
