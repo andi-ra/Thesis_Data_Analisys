@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribuzioni stabili &#8212; Tesi Andi Dulla</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analisi dei dati ottenuti dalla applicazione di controllo distribuito" href="analisi_dati_rete_BOBI.html" />
+    <link rel="prev" title="Ottimizzazione del traffico" href="optimization.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Tesi Andi Dulla</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   SDN forming per mobile IoT
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Strumenti
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sensor.html">
+   Reti di sensori
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Teoria
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimization.html">
+   Ottimizzazione del traffico
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Distribuzioni stabili
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Risultati simulazione
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analisi_dati_rete_BOBI.html">
+   Analisi dei dati ottenuti dalla applicazione di controllo distribuito
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="main_pipeline.html">
+   Albero ricoprente di costo minimo capacitato
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="frank-wolfe.html">
+   Metodo Frank &amp; Wolfe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/chapters/stable.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapters/stable.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/stable.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/stable.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduzione">
+   Introduzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definizione-1">
+     Definizione
+     <span class="math notranslate nohighlight">
+      \(1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teorema-feller-vol-2">
+     Teorema
+     <span class="xref cite cite-p">
+      feller-vol-2
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definizione-2">
+     Definizione
+     <span class="math notranslate nohighlight">
+      \(2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#osservazioni">
+     Osservazioni
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#osservazione-importante-gesataq">
+     Osservazione importante
+     <span class="xref cite cite-p">
+      GeSaTaq
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lemma-1">
+       Lemma 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#definizione-di-punto-fisso">
+       Definizione di punto fisso
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applicazioni">
+     Applicazioni
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendice">
+   Appendice
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposizione">
+     proposizione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Applicazioni
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Distribuzioni stabili</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduzione">
+   Introduzione
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definizione-1">
+     Definizione
+     <span class="math notranslate nohighlight">
+      \(1\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#teorema-feller-vol-2">
+     Teorema
+     <span class="xref cite cite-p">
+      feller-vol-2
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definizione-2">
+     Definizione
+     <span class="math notranslate nohighlight">
+      \(2\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#osservazioni">
+     Osservazioni
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#osservazione-importante-gesataq">
+     Osservazione importante
+     <span class="xref cite cite-p">
+      GeSaTaq
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lemma-1">
+       Lemma 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#definizione-di-punto-fisso">
+       Definizione di punto fisso
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applicazioni">
+     Applicazioni
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendice">
+   Appendice
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposizione">
+     proposizione
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Applicazioni
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="distribuzioni-stabili">
+<h1>Distribuzioni stabili<a class="headerlink" href="#distribuzioni-stabili" title="Permalink to this headline">¶</a></h1>
+<p>La discussione che segue non ha la pretesa di esaustività ma soltanto di portare alla luce gli aspetti principali e quali
+sono le conseguenze dell’uso e delle presenza di distribuzioni stabili nel modello del sistema.</p>
+<div class="section" id="introduzione">
+<h2>Introduzione<a class="headerlink" href="#introduzione" title="Permalink to this headline">¶</a></h2>
+<p>I processi stabili hanno attratto un’attenzione sempre maggiore, una descrizione sistematica della teoria dei processi
+“atipici” e cioè con code pesanti la possiamo trovare in <span id="id1">[<a class="reference internal" href="../markdown.html#id3" title="B.C. Brookes. Limit distributions for sums of independent random variables. by b.v. gnedenko and a.n. kolmogorov. translated by k.l. chung. pp. ix, 264. $7.50. 1954. (addison-wesley, cambridge, mass.). The Mathematical Gazette, 39(330):342–343, 1955. doi:10.2307/3608621.">Bro55</a>]</span> oppure <span id="id2">[<a class="reference internal" href="../markdown.html#id4" title="William Feller. An introduction to probability theory and its applications. Vol. II. Second edition. John Wiley &amp; Sons Inc., New York, 1971.">Fel71</a>]</span> ed infine in</p>
+<p>Il teorema limite centrale offre la giustificazione fondamentale per usare una trattazione più semplificata alle distribuzioni
+stabili, possiamo estenderlo ed enunciare che: le distribuzioni stabili sono le distribuzioni limite della somma di
+distribuzioni normalizzate, indipendenti ed identicamente distribuite. Il caso gaussiano come distribuzione limite è solo
+il caso più famoso ed ampiamente studiato. I processi gaussiani si prestano ad una trattabilità matematica molto agevole
+e quindi permettono di ottenere degli ottimi indizi anche nel caso in cui io abbia variabili aleatorie qualunque, da qui
+la “fama” dei processi gaussiani. Inoltre c’è da dire che i processi gaussiani sono stati i primi ad essere compresi
+completamente e ad esssere utilizzati nella pratica in quanto ottimi strumenti di modellazione analitica. Il problema sta
+in tutti quei casi di modellazione di processi stocastici soggetti a larghe fluttuazioni. Solitamente si modella le larghe
+fluttuazioni probabilistiche come processi <em>non</em> stazionari e si riduce l’orizzonte di osservazione ad un intervallo
+opportuno, sufficiente piccolo, sufficiente a conferire a quel processo delle caratteristiche di stazionarietà. Basti
+pensare all’uso di strumenti come la STFT (short time Fourier transform) per l’analisi di segnali vocali o multimediali
+i quali vengono in alcuni casi modellati come processi gaussiani non stazionari.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Overdispersion
+È la caratterstica per cui un campione mostra una varianza maggiore di quella prevista. Questa varianza anomala avviene
+per colpa della varianza che diverge nell’espressione della mia pdf.</p>
+</div>
+<p>Il problema della distribuzione gaussiana usata per modellare è che non riesce a catturare le caratteristiche di grandi
+fluttuazioni dalla media come ad esempio fenomeni di overdispersion.
+Le distribuzioni stabili non hanno queste limitazioni. In generale, queste distribuzioni hanno delle code che decadono con
+una “power-law”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Power-law decay
+Con decadimento con legge esponenziale intendiamo una relazione fra due quantità tale per cui una variazione nella prima
+risulta in un cambio proporzionale nella seconda indipendentemente dalle loro dimensioni iniziali (pensiamo all’area ed
+al legame con la lunghezza del lato)</p>
+</div>
+<p>Nelle distribuzioni stabili si ha poche “intuizioni applicate”, la più famosa è al “Teoria del Cigno Nero” del dott. Nassim
+Taleb la quale spiega come un evento molto sorprendente venga erroneamente spiegato a posteriori nonstante la conoscenza
+a posteriori dell’evento. Più in particolare nella sua teoria del cigno nero, applicata principalmente nel mondo della
+finanza quantitativa, riesce a spiegare e dare degli indizi su:</p>
+<ol class="simple">
+<li><p>il ruolo di eventi spoporzionatamente intensi (o di alto profilo), difficili da prevedere ed eventi rari che sono oltre
+le tecniche solitamente usate in discipline come tecnologia e finanza (ad esempio le medie storiche sono inaffidabili)</p></li>
+<li><p>La non commensurabilità della probabilità di due eventi estremi consecutivi (poiché vigono leggi degli eventi rari)</p></li>
+</ol>
+<p>Tornando alle distribuzioni a code pesanti, possiamo dire che queste dipendano in generale da un parametro <span class="math notranslate nohighlight">\( \alpha \)</span> il
+quale ha come intervallo di definizione <span class="math notranslate nohighlight">\( 0 \le \alpha \le 2 \)</span>. Più piccolo è <span class="math notranslate nohighlight">\( \alpha\)</span>, tanto più lento sarà il decadimento
+e tanto più saranno pesanti, o grasse, le code. Una nota importante da fare è la seguente: le distribuzioni fat-tailed
+hanno sempre varianza infinita e se <span class="math notranslate nohighlight">\( \alpha \le 1 \)</span> allora anche la media non converge.</p>
+<p>Negli ultimi decenni, i dati con code pesanti sono stati raccolti nelle discipline più disparate:</p>
+<ul class="simple">
+<li><p>economia</p></li>
+<li><p>telecomunicazioni</p></li>
+<li><p>idrologia</p></li>
+</ul>
+<p>In tutti questi campi nel corso degli anni, i dati raccolti, hanno suggerito distribuzioni non gaussiane come modello.</p>
+<p>Le distribuzioni non gaussiane hanno l’ottimo pregio che permettono di modellare un range molto più ampio di comportamenti
+probabilistici se messi a confronto con distribuzioni gaussiane. Mentre da un lato ho dei modelli molto più espressivi
+grazie alle distribuzioni stabili, il costo che pago è una parametrizzazione molto più ricca e complicata da stimare.
+Questo poiché le distribuzioni gaussiane sono completamente identificate dalla loro funzione di autocovarianza e media,
+ciò non è più vero nelle distribuzioni stabili.</p>
+<p>Seguo l’esposizione di <span id="id3">[<a class="reference internal" href="../markdown.html#id3" title="B.C. Brookes. Limit distributions for sums of independent random variables. by b.v. gnedenko and a.n. kolmogorov. translated by k.l. chung. pp. ix, 264. $7.50. 1954. (addison-wesley, cambridge, mass.). The Mathematical Gazette, 39(330):342–343, 1955. doi:10.2307/3608621.">Bro55</a>]</span> nell’enunciare quattro definizioni equivalenti di distribuzioni stabili.</p>
+<div class="section" id="definizione-1">
+<h3>Definizione <span class="math notranslate nohighlight">\(1\)</span><a class="headerlink" href="#definizione-1" title="Permalink to this headline">¶</a></h3>
+<p>Una variabile aleatoria  <span class="math notranslate nohighlight">\(X\)</span> è <em>stabile</em> se per dei numeri <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\(B\)</span> esistono dei valori positivi <span class="math notranslate nohighlight">\(C\)</span> e <span class="math notranslate nohighlight">\(D\)</span> tali che</p>
+<p><span class="math notranslate nohighlight">\(AX_1+BX_2 \,{\buildrel d \over =}\, CX+D \)</span> <br> dove <span class="math notranslate nohighlight">\(X_1\)</span> e <span class="math notranslate nohighlight">\( X_2\)</span> sono campioni di <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(=^d\)</span> denota l’uguaglianza in distribuzione. La
+distribuzione <span class="math notranslate nohighlight">\(X\)</span> stabile viende detta <em>simmetrica</em> se la pdf di <span class="math notranslate nohighlight">\(X\)</span> è uguale a quella di <span class="math notranslate nohighlight">\(-X\)</span></p>
+</div>
+<div class="section" id="teorema-feller-vol-2">
+<h3>Teorema <span id="id4">[<a class="reference internal" href="../markdown.html#id4" title="William Feller. An introduction to probability theory and its applications. Vol. II. Second edition. John Wiley &amp; Sons Inc., New York, 1971.">Fel71</a>]</span><a class="headerlink" href="#teorema-feller-vol-2" title="Permalink to this headline">¶</a></h3>
+<p>Per ogni distribuzione stabile della variabile aleatoria <span class="math notranslate nohighlight">\(X\)</span>, esiste un numero <span class="math notranslate nohighlight">\(\alpha \in [0,2]\)</span> tale che il numero <span class="math notranslate nohighlight">\(C\)</span>
+nella definizione precedente soddisfa <br> <span class="math notranslate nohighlight">\( C^{\alpha} = A^{\alpha}+B^{\alpha}\)</span> <br> il numero <span class="math notranslate nohighlight">\(\alpha\)</span> viene chiamato
+<em>indice di stabilità</em> o <em>esponente caratteristico</em>. Una distribuzione stabile con variabile aleatoria <span class="math notranslate nohighlight">\(X\)</span> con indice
+<span class="math notranslate nohighlight">\(\alpha\)</span> viene definita <span class="math notranslate nohighlight">\(\alpha\)</span>-stabile.</p>
+</div>
+<div class="section" id="definizione-2">
+<h3>Definizione <span class="math notranslate nohighlight">\(2\)</span><a class="headerlink" href="#definizione-2" title="Permalink to this headline">¶</a></h3>
+<p>Una variabile aleatoria <span class="math notranslate nohighlight">\(X\)</span> viene detta stabile se per ogni <span class="math notranslate nohighlight">\(n \ge 2\)</span>, è possibile trovare due numeri positivi <span class="math notranslate nohighlight">\(C_n\)</span> e
+<span class="math notranslate nohighlight">\(D_n\)</span> tali che <br> <span class="math notranslate nohighlight">\( X_1+ X_2+ X_3+ ... + X_n \,{\buildrel d \over =}\, C_nX+ D_n \)</span> <br> dove <span class="math notranslate nohighlight">\({X_i}_{i=1}^{n} \)</span> sono campioni iid estratti da
+<span class="math notranslate nohighlight">\(X\)</span>. Nel libro di <span id="id5">[<a class="reference internal" href="../markdown.html#id4" title="William Feller. An introduction to probability theory and its applications. Vol. II. Second edition. John Wiley &amp; Sons Inc., New York, 1971.">Fel71</a>]</span> l’autore dimostra l’equivalenza fra le due definizioni in quanto se la definizione
+<span class="math notranslate nohighlight">\(1\)</span> è vera allora per induzione sarà verificata anche la definizione <span class="math notranslate nohighlight">\(2\)</span>, per il viceversa consultare <span id="id6">[<a class="reference internal" href="../markdown.html#id4" title="William Feller. An introduction to probability theory and its applications. Vol. II. Second edition. John Wiley &amp; Sons Inc., New York, 1971.">Fel71</a>]</span>.</p>
+</div>
+<div class="section" id="osservazioni">
+<h3>Osservazioni<a class="headerlink" href="#osservazioni" title="Permalink to this headline">¶</a></h3>
+<p>Sempre nel libro (<span id="id7">[<a class="reference internal" href="../markdown.html#id4" title="William Feller. An introduction to probability theory and its applications. Vol. II. Second edition. John Wiley &amp; Sons Inc., New York, 1971.">Fel71</a>]</span> teorema VI.1.1) vediamo che se la definizione <span class="math notranslate nohighlight">\(2\)</span> è vera allora vediamo che
+necessariamente che <br><span class="math notranslate nohighlight">\(C_n = n^{1/2}\)</span> <br> per qualche <span class="math notranslate nohighlight">\( 0 &lt;= \alpha &lt;= 2 \)</span>. Questo <span class="math notranslate nohighlight">\(\alpha\)</span> è ovviamente l’esponente
+caratteristico.</p>
+</div>
+<div class="section" id="osservazione-importante-gesataq">
+<h3>Osservazione importante <span id="id8">[<a class="reference internal" href="../markdown.html#id5" title="M.S. Taqqu Gennady Samorodnitsky. Stable Non-Gaussian Random Processes: Stochastic Models with Infinite Variance: Stochastic Modeling. First edition. Routledge, Routledge CRC Press, 1994. doi:https://doi.org/10.1201/9780203738818.">GS94</a>]</span><a class="headerlink" href="#osservazione-importante-gesataq" title="Permalink to this headline">¶</a></h3>
+<p>Consideriamo la sequenza <span class="math notranslate nohighlight">\(\displaystyle \textbf{X} = (X_i)_{i=-\infty}^{\infty}\)</span> di variabile aleatorie. Fissiamo un
+numero <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span>. Per ogni <span class="math notranslate nohighlight">\(n \ge 1\)</span>, definiamo la trasformazione <span class="math notranslate nohighlight">\(T_n\)</span> come la mappa che dato il vettore aleatorio
+<span class="math notranslate nohighlight">\(\textbf{X}\)</span> produce <span class="math notranslate nohighlight">\(T_n\textbf{X} ={(T_nX)_i}_{-\infty}^{\infty}\)</span> con
+<br> <span class="math notranslate nohighlight">\(\displaystyle (T_nX)_i =\frac{1}{n^{\delta}} \sum_{j=in}^{(i+1)n-1}X_j\)</span> <br> Le trasformazioni <span class="math notranslate nohighlight">\(T_n\)</span> con <span class="math notranslate nohighlight">\(n \ge 1\)</span>
+sono chimamate <em>trasformazioni rinormalizzanti di gruppo</em> con <em>esponentec critico</em> <span class="math notranslate nohighlight">\(\delta\)</span>.</p>
+<div class="section" id="lemma-1">
+<h4>Lemma 1<a class="headerlink" href="#lemma-1" title="Permalink to this headline">¶</a></h4>
+<p><br> <span class="math notranslate nohighlight">\(T_{mn} = T_mT_n\)</span> <br>
+Nella monografia <span id="id9">[<a class="reference internal" href="../markdown.html#id3" title="B.C. Brookes. Limit distributions for sums of independent random variables. by b.v. gnedenko and a.n. kolmogorov. translated by k.l. chung. pp. ix, 264. $7.50. 1954. (addison-wesley, cambridge, mass.). The Mathematical Gazette, 39(330):342–343, 1955. doi:10.2307/3608621.">Bro55</a>]</span> viene dimostrato come <span class="math notranslate nohighlight">\(T_{mn} = T_mT_n\)</span> cioè la trasformazione <span class="math notranslate nohighlight">\(T_m\)</span> seguita
+dalla trasformazione <span class="math notranslate nohighlight">\(T_n\)</span> sia euivalente alla trasformazione <span class="math notranslate nohighlight">\(T_{mn}\)</span> e dunque la famiglia di trasformazioni
+<span class="math notranslate nohighlight">\({T_N, n \ge 1}\)</span> formano un gruppo.</p>
+</div>
+<div class="section" id="definizione-di-punto-fisso">
+<h4>Definizione di punto fisso<a class="headerlink" href="#definizione-di-punto-fisso" title="Permalink to this headline">¶</a></h4>
+<p>Una sequenza <span class="math notranslate nohighlight">\(\textbf{X}=(X_i)_{i=-\infty}^{\infty}\)</span> viende detta <em>punto fisso</em> del gruppo di trasformazioni rinormalizzanti
+se <span class="math notranslate nohighlight">\(T_n\textbf{X}\,{\buildrel d \over =}\,\textbf{X}\)</span> per ogni <span class="math notranslate nohighlight">\(n \ge 1\)</span>, cioè se la distribuzione di <span class="math notranslate nohighlight">\(\textbf{x}\)</span> è
+invariante sotto <span class="math notranslate nohighlight">\(T_n\)</span> per ogni <span class="math notranslate nohighlight">\(n \ge 1\)</span>.</p>
+<p>La sequenza <span class="math notranslate nohighlight">\(\textbf{X}=(X_i)_{i=-\infty}^{\infty}\)</span> di variabili aleatorie i.i.d <span class="math notranslate nohighlight">\(\alpha\)</span>-stabili è un punto fisso delle
+trasformazioni <span class="math notranslate nohighlight">\(T_n\)</span> con <span class="math notranslate nohighlight">\(\delta =\frac{1}{\alpha}\)</span> poiché:
+<br> <span class="math notranslate nohighlight">\((T_n\textbf{X})_i = \frac{1}{n^{\frac{1}{\alpha}}}(X_{in}+X_{in+1}+ \cdot + X_{i(n+1)-1}) \,{\buildrel d \over =}\, X_i\)</span>
+<br> e poiché i campioni della sequenza <span class="math notranslate nohighlight">\(X_i\)</span> sono indipendenti per ipotesi, ottengo per linearità anche l’indipendenza delle
+<span class="math notranslate nohighlight">\((T_n\textbf{X})\)</span>.</p>
+</div>
+</div>
+<div class="section" id="applicazioni">
+<h3>Applicazioni<a class="headerlink" href="#applicazioni" title="Permalink to this headline">¶</a></h3>
+<p>La teoria dei gruppi di trasfomazioni rinormalizzanti pone le basi per un metodo estrememante veloce per produrre e
+simulare variabili aleatorie con code pesanti in modo corretto. Segue una simulazione di come analizzare una distribuzione
+di somma di Pareto usando il package matlab <span id="id10">[<a class="reference internal" href="../markdown.html#id6" title="Mark Veillette. Alpha-stable distributions in matlab. 2022. doi:https://github.com/markveillette/stbl.">Vei22</a>]</span>.</p>
+<p>Consideriamo una variabile aleatoria <span class="math notranslate nohighlight">\(X\)</span> la cui distribuzione cumulativa è data da: <br>
+<span class="math notranslate nohighlight">\(\displaystyle Prob[X \leq x] = \begin{cases}
+          1-x^{-\frac{3}{4}} &amp; \text{ x &gt; 1 }\\
+          0  &amp; \text{altrove}
+     \end{cases}\)</span> <br></p>
+<p>Posso campionare molto facilmente da questa, poiché inverto la CDF ottenendo: <br>
+<span class="math notranslate nohighlight">\(X = u^{-\frac{4}{3}}\)</span> dove <span class="math notranslate nohighlight">\(u \approx \textbf{U}(0,1)\)</span> <br> i vari <span class="math notranslate nohighlight">\(X_i\)</span> sono i.i.d.</p>
+<p>Possiamo vedere come dalla coda di questa ditribuzione ed osservando che <span class="math notranslate nohighlight">\(\alpha=\frac{4}{3}\)</span> qui avrò una media infinita.
+In questo caso, come minimo, non posso apllicare il teorema limite centrale. Tiriamo fuori il gruppo di trasformazioni
+rinormalizzanti ed in particolare consideriamo la somma riscalata dal fattore <span class="math notranslate nohighlight">\(n\)</span> come nella definizione:
+<span class="math notranslate nohighlight">\(X^{+n} = \displaystyle n^{-\frac{4}{3}} \sum_{i=1}^{n}X_i \)</span> in cui al solito ipotizziamo che i vari campio siano i.i.d.</p>
+<p>Si può dimostrare <span id="id11">[<a class="reference internal" href="../markdown.html#id5" title="M.S. Taqqu Gennady Samorodnitsky. Stable Non-Gaussian Random Processes: Stochastic Models with Infinite Variance: Stochastic Modeling. First edition. Routledge, Routledge CRC Press, 1994. doi:https://doi.org/10.1201/9780203738818.">GS94</a>]</span> come la somma precedentemente descitta converga ad una distribuzione stabile
+<span class="math notranslate nohighlight">\(S(\alpha_0,\beta_0,\gamma_0,\delta_0)\)</span>. A questo punto possiamo verificare ciò che troviamo nel libro citato. Generiamo
+<span class="math notranslate nohighlight">\(X^{+100}_i\)</span> una sequenza di 100 campioni ed applichiamo la trasformazione, come mostrato nel seguente listato:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">N</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
+    <span class="n">sampsize</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">RandStream</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s1">&#39;mrg32k3a&#39;</span><span class="p">,</span><span class="s1">&#39;NumStreams&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Seed&#39;</span><span class="p">,</span><span class="mi">50</span><span class="p">);</span> <span class="o">%</span> <span class="n">For</span> <span class="n">reproducibility</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
+        <span class="o">%</span> <span class="n">Generate</span> <span class="n">a</span> <span class="n">normalized</span> <span class="nb">sum</span> <span class="n">of</span> <span class="n">Pareto</span><span class="o">-</span><span class="nb">type</span> <span class="n">random</span> <span class="n">variables</span>
+        <span class="n">Samp</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">rand</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">sampsize</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.^</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">X</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Samp</span><span class="p">)</span><span class="o">/</span><span class="n">sampsize</span><span class="o">^</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="p">);</span> <span class="o">%</span> <span class="n">Normalize</span> <span class="nb">sum</span>
+    <span class="n">end</span>
+    <span class="o">%</span> <span class="n">estimate</span> <span class="n">parameters</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">stblfit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="s1">&#39;ecf&#39;</span><span class="p">,</span><span class="n">statset</span><span class="p">(</span><span class="s1">&#39;Display&#39;</span><span class="p">,</span><span class="s1">&#39;iter&#39;</span><span class="p">));</span>
+    <span class="o">%</span> <span class="n">plot</span> <span class="n">data</span> <span class="k">with</span> <span class="n">fit</span> <span class="n">parameters</span>
+    <span class="n">xmax</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="s1">&#39;Position&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">517</span> <span class="mi">626</span> <span class="mi">939</span> <span class="mi">410</span><span class="p">]);</span>
+    <span class="n">clf</span><span class="p">;</span>
+    <span class="n">title</span><span class="p">(</span><span class="s1">&#39;Stable fit to sums of Pareto random variables&#39;</span><span class="p">);</span>
+    <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">hold</span> <span class="n">on</span>
+    <span class="n">stem</span><span class="p">(</span><span class="n">X</span><span class="p">(</span><span class="n">X</span> <span class="o">&lt;</span> <span class="n">xmax</span><span class="p">),</span><span class="n">stblpdf</span><span class="p">(</span><span class="n">X</span><span class="p">(</span><span class="n">X</span><span class="o">&lt;</span><span class="n">xmax</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="s1">&#39;quick&#39;</span><span class="p">));</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mf">.1</span><span class="p">:</span><span class="n">xmax</span><span class="p">;</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">stblpdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="s1">&#39;quick&#39;</span><span class="p">),</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+    <span class="n">hold</span> <span class="n">off</span>
+    <span class="n">xlabel</span><span class="p">([</span><span class="s1">&#39;</span><span class="se">\a</span><span class="s1">lpha_0 = &#39;</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span><span class="s1">&#39;  </span><span class="se">\b</span><span class="s1">eta_0 = &#39;</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span><span class="s1">&#39;  \gamma_0 = &#39;</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">)),</span><span class="s1">&#39;  \delta_0 = &#39;</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">p</span><span class="p">(</span><span class="mi">4</span><span class="p">))]);</span>
+    <span class="n">legend</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;Fit stable density&#39;</span><span class="p">)</span>
+    <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">CDF</span> <span class="o">=</span> <span class="n">prctile</span><span class="p">(</span><span class="n">X</span><span class="p">,[</span><span class="mi">1</span><span class="p">:</span><span class="mi">75</span><span class="p">]);</span>
+    <span class="n">cmin</span> <span class="o">=</span> <span class="n">CDF</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">cmax</span> <span class="o">=</span> <span class="n">CDF</span><span class="p">(</span><span class="n">end</span><span class="p">);</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">cmin</span><span class="p">:</span><span class="mf">.1</span><span class="p">:</span><span class="n">cmax</span><span class="p">;</span>
+    <span class="n">estCDF</span> <span class="o">=</span> <span class="n">stblcdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">p</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+    <span class="n">plot</span><span class="p">(</span><span class="n">CDF</span><span class="p">,[</span><span class="mf">.01</span><span class="p">:</span><span class="mf">.01</span><span class="p">:</span><span class="mf">.75</span><span class="p">],</span><span class="s1">&#39;b.&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">estCDF</span><span class="p">,</span><span class="s1">&#39;r-&#39;</span><span class="p">)</span>
+    <span class="n">legend</span><span class="p">(</span><span class="s1">&#39;Empirical CDF&#39;</span><span class="p">,</span><span class="s1">&#39;Estimated CDF&#39;</span><span class="p">,</span><span class="s1">&#39;Location&#39;</span><span class="p">,</span><span class="s1">&#39;northwest&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="markdown-fig">
+<a class="bg-primary mb-1 reference internal image-reference" href="../_images/Cattura_STBL.JPG"><img alt="mcu" class="bg-primary mb-1" src="../_images/Cattura_STBL.JPG" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Risultato dell’interprete</span><a class="headerlink" href="#markdown-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Questo risultato ci dice che l’uso dei metodi statistici classici è inefficace nel dimostrare la convergenza dei vari
+campioni <span class="math notranslate nohighlight">\(X_i\)</span>. Il package STBLFIT descritto nella repository <span id="id12">[<a class="reference internal" href="../markdown.html#id6" title="Mark Veillette. Alpha-stable distributions in matlab. 2022. doi:https://github.com/markveillette/stbl.">Vei22</a>]</span> mostra come ottenre un fit accurato e a quale
+distribuzione stabile convergeranno i miei dati. Ci tornerà molto utile nell’ultimo capitolo quado tenteremo un fit dei
+dati raccolti <em>live</em> nella rete.</p>
+</div>
+</div>
+<div class="section" id="appendice">
+<h2>Appendice<a class="headerlink" href="#appendice" title="Permalink to this headline">¶</a></h2>
+<p>Un risultato finale molto interessante riguarda un risultato di rappresentazione di una variabile aleatoria <span class="math notranslate nohighlight">\(\alpha\)</span>
+stabile e simmetrica. In questo ultimo paragrafo mostrerò come si può decomporre una variabile aleatoria attraverso una
+somma di variabili di poisson indipendenti. Più in dettaglio si può dimostrare come una distribuzione <span class="math notranslate nohighlight">\(\alpha\)</span> stabile
+<span class="math notranslate nohighlight">\(X\)</span> la rappresento con una somma convergente di variabili aleatorie con un processo di arrivo di Poisson sottostante.
+Alla fine la discussione finale sull’utilità di questo approccio.</p>
+<p>Sia <span class="math notranslate nohighlight">\(N(t)\)</span> la funzione che denota il numero di clienti in arrivo al mio sistema nell’intervallo <span class="math notranslate nohighlight">\([0,t]\)</span>. Possiamo dire che
+<span class="math notranslate nohighlight">\({N(t), t \ge 0}\)</span> è un <em>processo di Poisson</em> con rate <span class="math notranslate nohighlight">\(\lambda\)</span> ed intertempi di arrivo <span class="math notranslate nohighlight">\(\tau_{i+1} - \tau_i, i \ge 1\)</span>.
+In tal caso gli intertempi di arrivo sono distribuiti secondo una distribuzione esponenziale con <span class="math notranslate nohighlight">\(\textbf{E}{\tau}=
+\frac{1}{\lambda}\)</span> e dunque <span class="math notranslate nohighlight">\(\textbf{E}{N(t)} = \lambda t\)</span> dunque il numero di clienti è proporzionale al tempo di
+osservazione ed il rate medio di arrivi.proporzionale</p>
+<p>I processi di poisson hanno numerose proprietà interessanti. Questa caratteristica, insieme alla trattabilità, rende
+molto interessante  l’enunciato ad inizio paragrafo. Vale la seguente</p>
+<div class="section" id="proposizione">
+<h3>proposizione<a class="headerlink" href="#proposizione" title="Permalink to this headline">¶</a></h3>
+<p>Sia <span class="math notranslate nohighlight">\({\tau_i}\)</span> la sequenza dei tempi di arrivo di un process di Poisson con rate 1 e sia <span class="math notranslate nohighlight">\({R_i}\)</span> la sequenza di variabili
+aleatorie i.i.d. e statisticamente indipendenti con i tempi di arrivo <span class="math notranslate nohighlight">\({\tau_i}\)</span>. Se la serie <br>
+<span class="math notranslate nohighlight">\(\displaystyle \sum_{i=1}^{\infty}\tau_i^{-\frac{1}{\alpha}}R_i \)</span> <br> converge quasi ovunque, allora converge anche ad
+una variabile aleatoria <span class="math notranslate nohighlight">\(\alpha\)</span>-stabile.</p>
+<p>La dimostrazione viene riportata in <span id="id13">[<a class="reference internal" href="../markdown.html#id5" title="M.S. Taqqu Gennady Samorodnitsky. Stable Non-Gaussian Random Processes: Stochastic Models with Infinite Variance: Stochastic Modeling. First edition. Routledge, Routledge CRC Press, 1994. doi:https://doi.org/10.1201/9780203738818.">GS94</a>]</span></p>
+<p>La proposizione precedente suggerisce che una variabile alteatoria stabile <span class="math notranslate nohighlight">\(X\)</span> può essere rappresentata come una somma
+infinita. Devo fare alcune ipotesi aggiuntive su <span class="math notranslate nohighlight">\(\alpha\)</span> e sulla variabile aleatoria <span class="math notranslate nohighlight">\({R_i}\)</span>. Le ipotesi sono:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(0 \leq \alpha \leq 2\)</span> così da avere una distribuzione stabile non degenere</p></li>
+<li><p>la distribuzione di <span class="math notranslate nohighlight">\({R_i}\)</span> ha i momenti <span class="math notranslate nohighlight">\(\alpha\)</span> assolutamente finiti e che sia simmetrica</p></li>
+</ul>
+<p>Sempre nello stesso capitolo del libro menzionato viene riportato un risultato simile ma che usa le ulteriori ipotesi e
+dimostra come la stessa espressione precedente converga ad una distribuzione stabile e simmetrica.simmetrica</p>
+</div>
+<div class="section" id="id14">
+<h3>Applicazioni<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>Posso usare questo “teorema di rappresentazione” per giustificare un metodo di stima molto più semplice rispetto al classico
+fit statistico della distribuzione. È prassi comune scomporre i segnali raccolti in somme di segnali più semplici, pensiamo
+alla decomposizione in basi trigonometriche con le serie di Fourier, oppure alla decomposizione in uno spazio ortonormale
+complesso proposto da <span id="id15">[<a class="reference internal" href="../markdown.html#id8" title="V. M. Zolotarev. One-dimensional stable distributions. Volume 65 of Translations of Mathematical Monographs. American Mathematical Society, Providence, RI, 1986. ISBN 0-8218-4519-5. Translated from the Russian by H. H. McFaden, Translation edited by Ben Silver.">Zol86</a>]</span> con cui scompone distribuzioni stabili tramite FFT, ecc…
+Posso applicare lo stesso ragionamento anche qui, la variabile aleatoria ha una distribuzione non trattabile con facilità
+poiché molto complicata. Ammettendo un errore finito di rappresentazione, posso considerare i miei dati distribuiti secondo
+una distribuzione stabile ma, la rappresento come somma di Poisson indipendenti che sono molto più facili da trattare e
+stimare. Dunque al costo di un errore di approssimazione ottengo la trattabilità matematica, un ottimo compromesso…</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="optimization.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Ottimizzazione del traffico</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="analisi_dati_rete_BOBI.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analisi dei dati ottenuti dalla applicazione di controllo distribuito</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Andi Dulla<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
