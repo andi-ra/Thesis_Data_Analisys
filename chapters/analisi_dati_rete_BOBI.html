@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Albero ricoprente di costo minimo capacitato" href="main_pipeline.html" />
-    <link rel="prev" title="Ingegnerizzazione del traffico" href="optimization.html" />
+    <link rel="prev" title="Distribuzioni stabili" href="stable.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,13 +114,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Algoritmi di ottimizzazione
+  Teoria
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="optimization.html">
-   Ingegnerizzazione del traffico
+   Ottimizzazione del traffico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stable.html">
+   Distribuzioni stabili
   </a>
  </li>
 </ul>
@@ -138,6 +143,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="main_pipeline.html">
    Albero ricoprente di costo minimo capacitato
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="frank-wolfe.html">
+   Metodo Frank &amp; Wolfe
   </a>
  </li>
 </ul>
@@ -476,7 +486,7 @@ ambiente sensori mobile IoT.</p>
 <h3>Esempio di non stazionierità del segnale traffico medio<a class="headerlink" href="#esempio-di-non-stazionierita-del-segnale-traffico-medio" title="Permalink to this headline">¶</a></h3>
 <p>Nel seguente dataset raccolto da un insieme di dispositivi con un’applicazione di controllo simile a quella usata nelle
 simulazioni del network forming. Dai risultati esposti con questo dataset ed il dataset delle simulazioni della tesi
-vediamo la conferma di ciò che viene riportato nell’<a class="reference external" href="http://www.cs.unc.edu/Research/dirt/proj/marron/VarHeavyTails/VarHeavyTail1.pdf">articolo</a>.
+vediamo la conferma di ciò che viene riportato in <span id="id1">[<a class="reference internal" href="../markdown.html#id7" title="Félix Hernández-Campos, J. S. Marron, F. Donelson Smith, and Gennady Samorodnitsky. Variable heavy tailed durations in internet traffic, part i: understanding heavy tails. In 10th International Workshop on Modeling, Analysis, and Simulation of Computer and Telecommunication Systems (MASCOTS 2002), 11-16 October 2002, Fort Worth, Texas, USA, 43. IEEE Computer Society, 2002. URL: http://csdl.computer.org/comp/proceedings/mascots/2002/1840/00/18400043abs.htm.">HCMSS02</a>]</span>
 Nell’articolo viene dimostrato come traffici di tipo HTTP o simili siano distribuiti secondo pmf con heavy-tails. Nell’
 articolo menzionato viene data una modellazione dettagliata di quello che è la distribuzione del traffico. <strong>Non</strong> ripeto
 l’analisi fatta da loro, semplicemente è un’osservazione della ecdf e tramite osservazione affermano che il traffico segue
@@ -865,7 +875,7 @@ x_2^* = \frac{1}{\sqrt{3}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\DULLA\AppData\Local\Temp\ipykernel_29480\2092273623.py:10: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\DULLA\AppData\Local\Temp\ipykernel_26420\2092273623.py:10: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
   ax = Axes3D(fig)  # Method 1
 </pre></div>
 </div>
@@ -962,11 +972,11 @@ di pacchetti che nel peggiore dei casi sarà <span class="math notranslate nohig
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="optimization.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="stable.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Ingegnerizzazione del traffico</p>
+            <p class="prev-next-title">Distribuzioni stabili</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="main_pipeline.html" title="next page">
