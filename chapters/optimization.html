@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ottimizzazione del traffico &#8212; Tesi Andi Dulla</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Distribuzioni stabili" href="stable.html" />
+    <link rel="prev" title="Reti di sensori" href="sensor.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Tesi Andi Dulla</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   SDN forming per mobile IoT
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Strumenti
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sensor.html">
+   Reti di sensori
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Teoria
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Ottimizzazione del traffico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stable.html">
+   Distribuzioni stabili
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Risultati simulazione
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analisi_dati_rete_BOBI.html">
+   Analisi dei dati ottenuti dalla applicazione di controllo distribuito
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="main_pipeline.html">
+   Albero ricoprente di costo minimo capacitato
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="frank-wolfe.html">
+   Metodo Frank &amp; Wolfe
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/chapters/optimization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapters/optimization.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/optimization.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/optimization.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Ottimizzazione del traffico</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="ottimizzazione-del-traffico">
+<h1>Ottimizzazione del traffico<a class="headerlink" href="#ottimizzazione-del-traffico" title="Permalink to this headline">¶</a></h1>
+<p>In questo capitolo vado a mostrare gli aspetti di modellazione del sistema, enunciare il problema e gli algoritmi
+proposti.</p>
+<p>Introduzione Il routing in una rete è un’operazione complessa che coinvolge molti attori e protcolli che permettono
+l’organizzazione fra tutti questi componenti indipendenti fra di loro. Le ragioni della complessità sono molteplici:</p>
+<p>Il routing richiede un grado di coordinazione fra i vai nodi nella rete o nel segmento di rete considerato piuttosto che
+solo fra due nodi. Ad esempio pensiamo i protocolli di livello 2 e livello 4.</p>
+<p>L’architettura di routing deve risolvere tutti quei casi di guasti e malfunzionamenti dei collegamenti o dei nodi,
+redirezionare il traffico ed aggiornare i database informativi di ogni device.</p>
+<p>Per ottenere delle performance buone, l’algoritmo di routing può essere costretto a modificare le sue rotte
+precedentemente calcolate quando parti o segmenti di rete diventano congestionati.</p>
+<p>Difficoltà e obiettivi nel routing Le due funzioni principali di un algoritmo di routing sono:</p>
+<div class="margin sidebar">
+<p class="sidebar-title">Routing table</p>
+<p>È la struttura dati che un dispositivo ha al suo interno in cui troviamo una lista di destinatari, la distanza e come
+raggiungere quel preciso destinatario ed in più altre informazioni a seconda del protocollo finale che la userà</p>
+</div>
+<p>È la struttura dati che un dispositivo ha al suo interno in cui troviamo una lista di destinatari, la distanza e come
+raggiungere quel preciso destinatario ed in più altre informazioni a seconda del protocollo finale che la userà</p>
+<p>la selezione delle rotte fra le varie coppie origine destinazione</p>
+<p>la consegna dei messaggi alla corretta destinazione una volta scelta la rotta</p>
+<p>La seconda funzione può sembrare banale una volta usate le routing table. Ciò non è sempre vero, in quanto questo
+concetto è molto semplice nel caso che io possa fare affidamento sull’infrastruttura di rete. Nel caso in cui questo non
+sia vero e quindi io ho a che fare con una infrastruttura non affidabile, diventa fondamentale il modo in cui scelgo il
+next-hop.</p>
+<div class="margin sidebar">
+<p class="sidebar-title">Next-hop</p>
+<p>È il dispositivo successivo rispetto al device sotto esame, all’interno del percorso che unisce topologicamente due
+punti di interesse, ad esempio possono essere una coppia origine-destinazione</p>
+</div>
+<p>In quanto è possibile che 2 scelte diverse di next-hop portino allo stesso destinatario nella topologia, ma un next-hop
+è stato disconnesso poiché il collegamento prescelto non è più disponibile. Non mi concentro sulla seconda funzione e
+sul capire cosa succede nel caso che un collegamento non sia disponibile ma mi concentrerò sulla prima funzione e come
+influisce sulle performance della rete.</p>
+<p>Vi sono due metriche principali sulla performance di una rete che sono influenzati dall’algoritmo di routing:</p>
+<ol class="simple">
+<li><p>Throughput, la quantità di servizio offerta dalla rete</p></li>
+<li><p>Latenza media dei pacchetti, la qualità del servizio offerto dalla rete</p></li>
+</ol>
+<p>Il routing interagisce con il controllo di flusso per determinare queste metriche di performance attraverso un controllo
+a catena chiusa.</p>
+<div class="figure align-default" id="markdown-fig">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://miro.medium.com/max/1400/1*q_J7uLY97EyiFdYXOXuG0g.png"><img alt="mcu" class="bg-primary mb-1" src="https://miro.medium.com/max/1400/1*q_J7uLY97EyiFdYXOXuG0g.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Immagine <strong>temporanea</strong></span><a class="headerlink" href="#markdown-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Una euristica molto efficace nel tentare di mantenere bassa la latenza di percorrenza del sistema all’aumentare del traffico
+è la seguente:</p>
+<blockquote>
+<div><p>All’aumentare dell’intensità media del carico offerto valuto la latenza media del sistema, quando qusta diventa
+eccessiva inizio a scartare dei pacchetti</p>
+</div></blockquote>
+<p>Questo ha come effetto il comportamento secondo cui tanto più l’algoritmo riesce a tenere bassa la latenza e tanto più
+potrà ammettere traffico ed aumentare così il throughput che la rete offre.</p>
+<p>Propongo la seguente simulazione:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\DULLA\PycharmProjects\Thesis_Data_Analisys\models&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\DULLA\PycharmProjects\Thesis_Data_Analisys&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">simpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">from</span> <span class="nn">models</span> <span class="kn">import</span> <span class="n">SimComponents</span>
+<span class="kn">from</span> <span class="nn">SimComponents</span> <span class="kn">import</span> <span class="n">PacketGenerator</span><span class="p">,</span> <span class="n">PacketSink</span><span class="p">,</span> <span class="n">SwitchPort</span><span class="p">,</span> <span class="n">PortMonitor</span>
+<span class="n">adist</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">expovariate</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">sdist</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">expovariate</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>  <span class="c1"># mean size 100 bytes</span>
+<span class="n">samp_dist</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">expovariate</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">)</span>
+<span class="n">port_rate</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="n">env</span> <span class="o">=</span> <span class="n">simpy</span><span class="o">.</span><span class="n">Environment</span><span class="p">()</span>  <span class="c1"># Create the SimPy environment</span>
+<span class="c1"># Create the packet generators and sink</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">PacketSink</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rec_arrivals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pg</span> <span class="o">=</span> <span class="n">PacketGenerator</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="s2">&quot;Greg&quot;</span><span class="p">,</span> <span class="n">adist</span><span class="p">,</span> <span class="n">sdist</span><span class="p">)</span>
+<span class="n">switch_port</span> <span class="o">=</span> <span class="n">SwitchPort</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">port_rate</span><span class="p">,</span> <span class="n">qlimit</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="c1"># Using a PortMonitor to track queue sizes over time</span>
+<span class="n">pm</span> <span class="o">=</span> <span class="n">PortMonitor</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">switch_port</span><span class="p">,</span> <span class="n">samp_dist</span><span class="p">)</span>
+<span class="c1"># Wire packet generators, switch ports, and sinks together</span>
+<span class="n">pg</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span> <span class="n">switch_port</span>
+<span class="n">switch_port</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span> <span class="n">ps</span>
+<span class="c1"># Run it</span>
+<span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">until</span><span class="o">=</span><span class="mi">8000000</span><span class="p">)</span>
+<span class="c1"># print(&quot;Last 10 waits: &quot; + &quot;, &quot;.join([&quot;{:.3f}&quot;.format(x) for x in ps.waits[-10:]]))</span>
+<span class="c1"># print(&quot;Last 10 queue sizes: {}&quot;.format(pm.sizes[-1000:]))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">sizes</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Line plot for System Occupation&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;customers in system&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+
+<span class="c1"># print(&quot;Last 10 sink arrival times: &quot; + &quot;, &quot;.join([&quot;{:.3f}&quot;.format(x) for x in ps.arrivals[-10:]]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average wait = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">waits</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">waits</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;received: </span><span class="si">{}</span><span class="s2">, dropped </span><span class="si">{}</span><span class="s2">, sent </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">switch_port</span><span class="o">.</span><span class="n">packets_rec</span><span class="p">,</span> <span class="n">switch_port</span><span class="o">.</span><span class="n">packets_drop</span><span class="p">,</span> <span class="n">pg</span><span class="o">.</span><span class="n">packets_sent</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loss rate: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">switch_port</span><span class="o">.</span><span class="n">packets_drop</span><span class="p">)</span> <span class="o">/</span> <span class="n">switch_port</span><span class="o">.</span><span class="n">packets_rec</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;average system occupancy: </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">sizes</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">sizes</span><span class="p">)))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">waits</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram for Sojourn times&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;normalized frequency of occurrence&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">arrivals</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Histogram for Sink Interarrival times&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">axis</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;normalized frequency of occurrence&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">avgWait</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">del</span> <span class="n">env</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">switch_port</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">simpy</span><span class="o">.</span><span class="n">Environment</span><span class="p">()</span>
+    <span class="n">ps</span> <span class="o">=</span> <span class="n">PacketSink</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rec_arrivals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">pg</span> <span class="o">=</span> <span class="n">PacketGenerator</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="s2">&quot;Greg&quot;</span><span class="p">,</span> <span class="n">adist</span><span class="p">,</span> <span class="n">sdist</span><span class="p">)</span>
+    <span class="n">switch_port</span> <span class="o">=</span> <span class="n">SwitchPort</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">port_rate</span><span class="p">,</span> <span class="n">qlimit</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">PortMonitor</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">switch_port</span><span class="p">,</span> <span class="n">samp_dist</span><span class="p">)</span>
+    <span class="n">pg</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span> <span class="n">switch_port</span>
+    <span class="n">switch_port</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span> <span class="n">ps</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">until</span><span class="o">=</span><span class="mi">800000</span><span class="p">)</span>
+    <span class="n">wait</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">waits</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">waits</span><span class="p">)</span>
+    <span class="c1"># print(&quot;average wait = {:.3f}&quot;.format(wait))</span>
+    <span class="n">avgWait</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">wait</span><span class="p">))</span>
+    <span class="k">del</span> <span class="n">env</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">switch_port</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Latenza media con coda lunga 1000&quot;</span><span class="p">)</span>
+<span class="n">avgWait</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">avgWait</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">single</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">avgWait</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">avgWait</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">single</span><span class="p">)})</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Latency&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Simulation run number&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">del</span> <span class="n">avgWait</span><span class="p">,</span> <span class="n">df</span>
+<span class="c1"># del env, ps, pg, pm, switch_port</span>
+<span class="n">avgWait</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">simpy</span><span class="o">.</span><span class="n">Environment</span><span class="p">()</span>
+    <span class="n">ps</span> <span class="o">=</span> <span class="n">PacketSink</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rec_arrivals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">pg</span> <span class="o">=</span> <span class="n">PacketGenerator</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="s2">&quot;Greg&quot;</span><span class="p">,</span> <span class="n">adist</span><span class="p">,</span> <span class="n">sdist</span><span class="p">)</span>
+    <span class="n">switch_port</span> <span class="o">=</span> <span class="n">SwitchPort</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">port_rate</span><span class="p">,</span> <span class="n">qlimit</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">PortMonitor</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">switch_port</span><span class="p">,</span> <span class="n">samp_dist</span><span class="p">)</span>
+    <span class="n">pg</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span> <span class="n">switch_port</span>
+    <span class="n">switch_port</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span> <span class="n">ps</span>
+    <span class="n">env</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">until</span><span class="o">=</span><span class="mi">800000</span><span class="p">)</span>
+    <span class="n">wait</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">waits</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ps</span><span class="o">.</span><span class="n">waits</span><span class="p">)</span>
+    <span class="c1"># print(&quot;average wait = {:.3f}&quot;.format(wait))</span>
+    <span class="n">avgWait</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">wait</span><span class="p">))</span>
+    <span class="k">del</span> <span class="n">env</span><span class="p">,</span> <span class="n">ps</span><span class="p">,</span> <span class="n">pg</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">switch_port</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">avgWait</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">avgWait</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">single</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Latenza media con coda lunga 100000&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">avgWait</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">avgWait</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">single</span><span class="p">)})</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Latency&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Simulation run number&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/optimization_1_0.png" src="../_images/optimization_1_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>average wait = 276460.046
+received: 80340, dropped 224, sent 80340
+loss rate: 0.002788150360965895
+average system occupancy: 2760.723
+</pre></div>
+</div>
+<img alt="../_images/optimization_1_2.png" src="../_images/optimization_1_2.png" />
+<img alt="../_images/optimization_1_3.png" src="../_images/optimization_1_3.png" />
+<img alt="../_images/optimization_1_4.png" src="../_images/optimization_1_4.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 108&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Latenza media con coda lunga 100000&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">avgWait</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">avgWait</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">single</span><span class="p">)})</span>
+<span class="ne">--&gt; </span><span class="mi">108</span> <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="n">p</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="n">p</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Latency&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Simulation run number&quot;</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\_decorators.py:46,</span> in <span class="ni">_deprecate_positional_args.&lt;locals&gt;.inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="s2">&quot;Pass the following variable</span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">keyword arg</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>         <span class="s2">&quot;From version 0.12, the only valid positional argument &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="ne">FutureWarning</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="p">)</span>
+<span class="nn">     45 kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">46</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\regression.py:863,</span> in <span class="ni">regplot</span><span class="nt">(x, y, data, x_estimator, x_bins, x_ci, scatter, fit_reg, ci, n_boot, units, seed, order, logistic, lowess, robust, logx, x_partial, y_partial, truncate, dropna, x_jitter, y_jitter, label, color, marker, scatter_kws, line_kws, ax)</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span> <span class="n">scatter_kws</span><span class="p">[</span><span class="s2">&quot;marker&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">marker</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span> <span class="n">line_kws</span> <span class="o">=</span> <span class="p">{}</span> <span class="k">if</span> <span class="n">line_kws</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">line_kws</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">863</span> <span class="n">plotter</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="p">,</span> <span class="n">line_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span> <span class="k">return</span> <span class="n">ax</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\regression.py:370,</span> in <span class="ni">_RegressionPlotter.plot</span><span class="nt">(self, ax, scatter_kws, line_kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">367</span>     <span class="bp">self</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">369</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_reg</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">370</span>     <span class="bp">self</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">line_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="c1"># Label the axes</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">):</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\regression.py:413,</span> in <span class="ni">_RegressionPlotter.lineplot</span><span class="nt">(self, ax, kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span> <span class="sd">&quot;&quot;&quot;Draw the model.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span> <span class="c1"># Fit the regression model</span>
+<span class="ne">--&gt; </span><span class="mi">413</span> <span class="n">grid</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">err_bands</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_regression</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span> <span class="n">edges</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">grid</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="c1"># Get set default aesthetics</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\regression.py:227,</span> in <span class="ni">_RegressionPlotter.fit_regression</span><span class="nt">(self, ax, x_range, grid)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="n">err_bands</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">227</span>     <span class="n">err_bands</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">ci</span><span class="p">(</span><span class="n">yhat_boots</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span> <span class="k">return</span> <span class="n">grid</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">err_bands</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\seaborn\utils.py:475,</span> in <span class="ni">ci</span><span class="nt">(a, which, axis)</span>
+<span class="g g-Whitespace">    </span><span class="mi">473</span> <span class="sd">&quot;&quot;&quot;Return a percentile range from an array of values.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">474</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">50</span> <span class="o">-</span> <span class="n">which</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span> <span class="o">+</span> <span class="n">which</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="ne">--&gt; </span><span class="mi">475</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">axis</span><span class="p">)</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">nanpercentile</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\nanfunctions.py:1385,</span> in <span class="ni">nanpercentile</span><span class="nt">(a, q, axis, out, overwrite_input, method, keepdims, interpolation)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1383</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">function_base</span><span class="o">.</span><span class="n">_quantile_is_valid</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Percentiles must be in the range [0, 100]&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1385</span> <span class="k">return</span> <span class="n">_nanquantile_unchecked</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1386</span>     <span class="n">a</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">keepdims</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\nanfunctions.py:1560,</span> in <span class="ni">_nanquantile_unchecked</span><span class="nt">(a, q, axis, out, overwrite_input, method, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1558</span> <span class="k">if</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1559</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="n">keepdims</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1560</span> <span class="n">r</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">function_base</span><span class="o">.</span><span class="n">_ureduce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1561</span>                               <span class="n">func</span><span class="o">=</span><span class="n">_nanquantile_ureduce_func</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1562</span>                               <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1563</span>                               <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1564</span>                               <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1565</span>                               <span class="n">overwrite_input</span><span class="o">=</span><span class="n">overwrite_input</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1566</span>                               <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1567</span> <span class="k">if</span> <span class="n">keepdims</span> <span class="ow">and</span> <span class="n">keepdims</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">_NoValue</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1568</span>     <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:3702,</span> in <span class="ni">_ureduce</span><span class="nt">(a, func, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3699</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3700</span>     <span class="n">keepdim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span>
+<span class="ne">-&gt; </span><span class="mi">3702</span> <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3703</span> <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">keepdim</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\nanfunctions.py:1584,</span> in <span class="ni">_nanquantile_ureduce_func</span><span class="nt">(a, q, axis, out, overwrite_input, method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1582</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">_nanquantile_1d</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1583</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1584</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">_nanquantile_1d</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1585</span>                                  <span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1586</span>     <span class="c1"># apply_along_axis fills in collapsed axis with results.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1587</span>     <span class="c1"># Move that axis to the beginning to match percentile&#39;s</span>
+<span class="g g-Whitespace">   </span><span class="mi">1588</span>     <span class="c1"># convention.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1589</span>     <span class="k">if</span> <span class="n">q</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">apply_along_axis</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\shape_base.py:402,</span> in <span class="ni">apply_along_axis</span><span class="nt">(func1d, axis, arr, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">400</span> <span class="n">buff</span><span class="p">[</span><span class="n">ind0</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+<span class="g g-Whitespace">    </span><span class="mi">401</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">inds</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">402</span>     <span class="n">buff</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">asanyarray</span><span class="p">(</span><span class="n">func1d</span><span class="p">(</span><span class="n">inarr_view</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">matrix</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>     <span class="c1"># wrap the array, to preserve subclasses</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="n">buff</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">__array_wrap__</span><span class="p">(</span><span class="n">buff</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\nanfunctions.py:1608,</span> in <span class="ni">_nanquantile_1d</span><span class="nt">(arr1d, q, overwrite_input, method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1604</span> <span class="k">if</span> <span class="n">arr1d</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1605</span>     <span class="c1"># convert to scalar</span>
+<span class="g g-Whitespace">   </span><span class="mi">1606</span>     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">arr1d</span><span class="o">.</span><span class="n">dtype</span><span class="p">)[()]</span>
+<span class="ne">-&gt; </span><span class="mi">1608</span> <span class="k">return</span> <span class="n">function_base</span><span class="o">.</span><span class="n">_quantile_unchecked</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1609</span>     <span class="n">arr1d</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">overwrite_input</span><span class="o">=</span><span class="n">overwrite_input</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:4383,</span> in <span class="ni">_quantile_unchecked</span><span class="nt">(a, q, axis, out, overwrite_input, method, keepdims)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4375</span> <span class="k">def</span> <span class="nf">_quantile_unchecked</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4376</span>                         <span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4377</span>                         <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4380</span>                         <span class="n">method</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4381</span>                         <span class="n">keepdims</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4382</span>     <span class="sd">&quot;&quot;&quot;Assumes that q is in [0, 1], and is an ndarray&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">4383</span>     <span class="n">r</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">_ureduce</span><span class="p">(</span><span class="n">a</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4384</span>                     <span class="n">func</span><span class="o">=</span><span class="n">_quantile_ureduce_func</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4385</span>                     <span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4386</span>                     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4387</span>                     <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4388</span>                     <span class="n">overwrite_input</span><span class="o">=</span><span class="n">overwrite_input</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4389</span>                     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4390</span>     <span class="k">if</span> <span class="n">keepdims</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4391</span>         <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">shape</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:3702,</span> in <span class="ni">_ureduce</span><span class="nt">(a, func, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3699</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3700</span>     <span class="n">keepdim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span>
+<span class="ne">-&gt; </span><span class="mi">3702</span> <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3703</span> <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">keepdim</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:4552,</span> in <span class="ni">_quantile_ureduce_func</span><span class="nt">(a, q, axis, out, overwrite_input, method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4550</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4551</span>         <span class="n">arr</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">4552</span> <span class="n">result</span> <span class="o">=</span> <span class="n">_quantile</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4553</span>                    <span class="n">quantiles</span><span class="o">=</span><span class="n">q</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4554</span>                    <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4555</span>                    <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4556</span>                    <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4557</span> <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File c:\users\dulla\pycharmprojects\thesis_data_analisys\venv\lib\site-packages\numpy\lib\function_base.py:4650,</span> in <span class="ni">_quantile</span><span class="nt">(arr, quantiles, axis, method, out)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4646</span> <span class="n">previous_indexes</span><span class="p">,</span> <span class="n">next_indexes</span> <span class="o">=</span> <span class="n">_get_indexes</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4647</span>                                               <span class="n">virtual_indexes</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">4648</span>                                               <span class="n">values_count</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4649</span> <span class="c1"># --- Sorting</span>
+<span class="ne">-&gt; </span><span class="mi">4650</span> <span class="n">arr</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4651</span>     <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(([</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">4652</span>                               <span class="n">previous_indexes</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+<span class="g g-Whitespace">   </span><span class="mi">4653</span>                               <span class="n">next_indexes</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+<span class="g g-Whitespace">   </span><span class="mi">4654</span>                               <span class="p">))),</span>
+<span class="g g-Whitespace">   </span><span class="mi">4655</span>     <span class="n">axis</span><span class="o">=</span><span class="n">DATA_AXIS</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4656</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inexact</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4657</span>     <span class="n">slices_having_nans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">4658</span>         <span class="n">take</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">indices</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">DATA_AXIS</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4659</span>     <span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+<img alt="../_images/optimization_1_6.png" src="../_images/optimization_1_6.png" />
+</div>
+</div>
+<p>Da questi grafici vediamo come il traffico sia da trattare in modo diverso rispetto alla classica elaborazione statistica
+dei segnali. Tutto questo nasce dal fatto che ho bisogno di implementare un controllo della rete. I benefici dell’uso di
+algoritmi di controllo SDN unito alle tecniche di controllo SDN per la disseminazione dei risultati e dei comandi,
+verranno esposti nell’ultimo capitolo che presenta le applicazioni e i risultati delle simulazioni delle varie applicazioni.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="sensor.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Reti di sensori</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="stable.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Distribuzioni stabili</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Andi Dulla<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
