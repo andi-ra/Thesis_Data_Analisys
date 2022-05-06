@@ -218,7 +218,7 @@ molto interessante  l'enunciato ad inizio paragrafo. Vale la seguente
 ### proposizione
 
 Sia ${\tau_i}$ la sequenza dei tempi di arrivo di un process di Poisson con rate 1 e sia ${R_i}$ la sequenza di variabili
-aleatorie i.i.d. e statisticamente indipendenti con i tempi di arrivo ${\tau_i}. Se la serie <br>
+aleatorie i.i.d. e statisticamente indipendenti con i tempi di arrivo ${\tau_i}$. Se la serie <br>
 $\displaystyle \sum_{i=1}^{\infty}\tau_i^{-\frac{1}{\alpha}}R_i $ <br> converge quasi ovunque, allora converge anche ad
 una variabile aleatoria $\alpha$-stabile.
 
