@@ -237,8 +237,8 @@ dimostra come la stessa espressione precedente converga ad una distribuzione sta
 Posso usare questo "teorema di rappresentazione" per giustificare un metodo di stima molto più semplice rispetto al classico
 fit statistico della distribuzione. È prassi comune scomporre i segnali raccolti in somme di segnali più semplici, pensiamo
 alla decomposizione in basi trigonometriche con le serie di Fourier, oppure alla decomposizione in uno spazio ortonormale
-complesso proposto da Zolotarev con cui scompone distribuzioni stabili tramite FFT, ecc... Posso applicare lo stesso ragionamento
-anche qui, la variabile aleatoria ha una distribuzione non trattabile con facilità poiché molto complicata. Ammettendo un
-errore finito di rappresentazione, posso considerare i miei dati distribuiti secondo una distribuzione stabile ma, la
-rappresento come somma di Poisson indipendenti che sono molto più facili da trattare e stimare. Dunque al costo di un
-errore di approssimazione ottengo la trattabilità matematica, un ottimo compromesso...
+complesso proposto da {cite:p}`zolotarev1986onedimensional` con cui scompone distribuzioni stabili tramite FFT, ecc...
+Posso applicare lo stesso ragionamento anche qui, la variabile aleatoria ha una distribuzione non trattabile con facilità
+poiché molto complicata. Ammettendo un errore finito di rappresentazione, posso considerare i miei dati distribuiti secondo
+una distribuzione stabile ma, la rappresento come somma di Poisson indipendenti che sono molto più facili da trattare e
+stimare. Dunque al costo di un errore di approssimazione ottengo la trattabilità matematica, un ottimo compromesso...

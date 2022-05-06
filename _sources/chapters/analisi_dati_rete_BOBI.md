@@ -70,7 +70,7 @@ ambiente sensori mobile IoT.
 
 Nel seguente dataset raccolto da un insieme di dispositivi con un'applicazione di controllo simile a quella usata nelle
 simulazioni del network forming. Dai risultati esposti con questo dataset ed il dataset delle simulazioni della tesi
-vediamo la conferma di ciò che viene riportato in {cite:p}`Hernandez-CamposMSS02`
+vediamo la conferma di ciò che viene riportato in {cite:p}`Hernandez-CamposMSS02`.
 Nell'articolo viene dimostrato come traffici di tipo HTTP o simili siano distribuiti secondo pmf con heavy-tails. Nell'
 articolo menzionato viene data una modellazione dettagliata di quello che è la distribuzione del traffico. **Non** ripeto
 l'analisi fatta da loro, semplicemente è un'osservazione della ecdf e tramite osservazione affermano che il traffico segue
