@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reti di sensori &#8212; Tesi Andi Dulla</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SDN e controller" href="ryu.html" />
+    <link rel="prev" title="SDN forming per mobile IoT" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Tesi Andi Dulla</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   SDN forming per mobile IoT
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Strumenti
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Reti di sensori
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ryu.html">
+   SDN e controller
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Teoria
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimization.html">
+   Ottimizzazione del traffico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stable.html">
+   Distribuzioni stabili
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Risultati simulazione
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="analisi_dati_rete_BOBI.html">
+   Applicazione di controllo distribuito
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="main_pipeline.html">
+   Aumento della robustezza della rete
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="frank-wolfe.html">
+   Allocazione ottima delle risorse
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/chapters/sensor.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/sensor.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Reti di sensori</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="reti-di-sensori">
+<h1>Reti di sensori<a class="headerlink" href="#reti-di-sensori" title="Permalink to this headline">¶</a></h1>
+<p>Una rete di sensori solitamente consiste in device:</p>
+<ul class="simple">
+<li><p>sorgenti, i sensori che campionano l’ambiente e producono informazioni utili</p></li>
+<li><p>terminazioni, le base station o domini di utilizzatori delle informazioni</p></li>
+</ul>
+<p>I nodi sensori vengono installati in zone geografiche d’interesse, dove grazie alle loro caratteristiche di costo
+ridotto, auto-organizzazione e intercambiabilità permettono di avere un piano di raccolta dati fungibile e capillare.
+Per poter raggiungere l’obiettivo di avere una rete auto-organizzante per monitorare ambienti ho bisogno di: campionare
+il fenomeno d’interesse, codificarlo e trasmettere questa rappresentazione verso un nodo consumatore dell’informazione
+attraverso un protocollo di routing.</p>
+<p>Un’ipotesi che spesso viene fatta è che i nodi consumatori siano più potenti dei nodi campionatori. In figura vediamo
+uno scenario tipico di reti di sensori.</p>
+<p>È da osservare la presenza della nuvoletta che rappresenta la Wide Area Network
+che metterà in comunicazione il data center di elaborazione dati e l’utente finale.</p>
+<div class="margin sidebar">
+<p class="sidebar-title">Clustertree</p>
+<p>Struttura a grafo aciclico in cui ogni nodo è un cluster di nodi rappresentati da un super nodo detto clusterhead</p>
+</div>
+<div class="figure align-default" id="markdown-fig">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://www.researchgate.net/profile/F-Cuomo/publication/4336210/figure/fig7/AS:668334320271360&#64;1536354727177/A-generic-structure-of-WPAN-organized-in-a-cluster-tree-topology-the-level-of-each-node.png"><img alt="fishy" class="bg-primary mb-1" src="https://www.researchgate.net/profile/F-Cuomo/publication/4336210/figure/fig7/AS:668334320271360&#64;1536354727177/A-generic-structure-of-WPAN-organized-in-a-cluster-tree-topology-the-level-of-each-node.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Scenario tipo organizzato come <strong>cluster-tree</strong> con reduced function device e full function devices</span><a class="headerlink" href="#markdown-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>Com’è composto il singolo device sensore? A grandi linee possiamo pensarlo come composto dai seguenti blocchi in figura:</p>
+<div class="margin sidebar">
+<p class="sidebar-title">Precisazione sullo schema a blocchi</p>
+<p>I blocchi tratteggiati sono opzionali</p>
+</div>
+<div class="figure align-default" id="id1">
+<a class="bg-primary mb-1 reference internal image-reference" href="https://i.imgur.com/eSAKY8c.png"><img alt="mcu" class="bg-primary mb-1" src="https://i.imgur.com/eSAKY8c.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Schema a blocchi di com’è composto un sensore intelligente</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Le reti di sensori sono molto particolari per i seguenti motivi:</p>
+<ol class="simple">
+<li><p>I nodi sensori sono limitati in termini di batteria (energia), capacità computazionale e memoria. Il parametro più
+sensibile è proprio la durata della batteria. Data la natura wireless delle comunicazioni bisogna fare un bilancio di
+tratta e ricordarsi che la <em>path loss</em> è il fattore predominante nel dispendio necessario per trasmettere da A a B.<br>
+<span class="math notranslate nohighlight">\( FSPL = P_T G_T G_R (\frac{λ}{4πd})^2 \)</span> da considerare anche i fenomeni di shadowing e multipath fading<br> dunque vediamo come la riduzione della potenza al ricevitore segue una legge
+quadratica <span class="math notranslate nohighlight">\( d^{-2} \)</span>. Questo è un problema che induce a progettare bene gli algoritmi di routing, in quanto una trasmissione
+completamente 1-hop è impensabile, servono algoritmi di routing multi-hop con le loro peculiarità.</p></li>
+<li><p>Dato il costo ridotto dei dispositivi sensori è possibile installare un gran numero di dispositivi. Avere un gran numero
+di dispositivi significa coprire meglio il territorio ed essere più capillari (e di conseguenza efficaci) nel monitoraggio.
+D’altro canto non tutti i dispositivi verrebbero usati, avrei una certa percentuale inutilizzata e questo riduce l’efficienza
+della rete. Come in molti altri casi la questione sta nel trovare un equilibrio accettabile.</p></li>
+</ol>
+<div class="margin sidebar">
+<p class="sidebar-title">Grado di connessione</p>
+<p>È la distribuzione di porbabilità del numero di collegamenti logici che un dispositivo ha con i suoi vicini</p>
+</div>
+<ol class="simple">
+<li><p>Dopo il rollout, i nodi si organizzano in una rete e cooperano per portare a termine un compito. In generale non c’è
+un nodo coordinatore centrale che orchestra tutto quanto. Inoltre data la natura della rete dopo verrà dimostato come il
+fallimento o guasto casuale nelle reti di sensori che soddisfano un criterio di normalità sulla distribuzione dei gradi
+di connessione, non vengono influenzati in modo rilevante dai guasti random.</p></li>
+<li><p>La topologia della rete cambia di frequente poiché oiltre ai guasti dobbiamo tenere conto anche dei cicli di
+sleep/operazione del dispositivo, oltre che al cambio di ruolo che ogni nodo ricoprirà (vedi capitoli successivi).</p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">SDN forming per mobile IoT</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ryu.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SDN e controller</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Andi Dulla<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
